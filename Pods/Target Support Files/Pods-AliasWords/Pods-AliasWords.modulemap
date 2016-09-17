@@ -1,0 +1,6 @@
+framework module Pods_AliasWords {
+  umbrella header "Pods-AliasWords-umbrella.h"
+
+  export *
+  module * { export * }
+}

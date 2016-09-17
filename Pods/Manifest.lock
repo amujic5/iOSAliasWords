@@ -1,0 +1,18 @@
+PODS:
+  - AHKNavigationController (1.3)
+  - MGSwipeTableCell (1.5.5)
+  - UICountingLabel (1.4.0)
+
+DEPENDENCIES:
+  - AHKNavigationController
+  - MGSwipeTableCell
+  - UICountingLabel
+
+SPEC CHECKSUMS:
+  AHKNavigationController: 3b8d5177e1a9c6dde5d16964b97781dea88457bf
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
+
+PODFILE CHECKSUM: 5c3c6632d40286bf1cb8cebdb30400d15f80b514
+
+COCOAPODS: 1.0.1
