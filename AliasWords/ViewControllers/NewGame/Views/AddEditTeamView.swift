@@ -39,6 +39,66 @@ final class AddEditTeamView: UIView {
         
     }
     
+    func createTeam(createButton: UIButton) {
+        deleteParenViewHeightConstraint.constant = 0
+        
+        backgroundView.alpha = 0
+        dialogView.alpha = 0
+        self.dialogView.subviews.forEach{
+            $0.alpha = 0
+        }
+
+        setNeedsLayout()
+        
+        isHidden = false
+        
+        // animation view
+        let view = UIView()
+        
+        let button = UIButton()
+        button.setImage(createButton.image(for: UIControlState.normal), for: UIControlState.normal)
+        button.setTitle(createButton.titleLabel?.text, for: UIControlState.normal)
+        button.setTitleColor(createButton.titleColor(for: UIControlState.normal), for: UIControlState.normal)
+        button.titleLabel?.font = createButton.titleLabel?.font
+        view.layer.cornerRadius = createButton.layer.cornerRadius
+        view.layer.masksToBounds = createButton.layer.masksToBounds
+        
+        view.addSubview(button)
+        addSubview(view)
+        view.frame = createButton.superview!.convert(createButton.frame, to: nil)
+        button.frame = view.bounds
+        view.alpha = 0
+        view.backgroundColor = dialogView.backgroundColor
+        
+        UIView.animate(withDuration: 0.02, animations: {
+            view.alpha = 1
+            createButton.alpha = 0
+            }) { (_) in
+        
+                UIView.animate(withDuration: 0.2, animations: {
+                    button.alpha = 0
+                })
+                
+                UIView.animate(withDuration: 0.001, delay: 0.249, options: [], animations: {
+                    self.dialogView.alpha = 1
+                    }, completion: { (_) in
+                        self.dialogView.subviews.forEach{
+                            $0.fadeUp()
+                        }
+                })
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    view.frame = self.dialogView.frame
+                    button.frame = view.bounds
+                    self.backgroundView.alpha = 1
+                    }, completion: { (_) in
+                        createButton.alpha = 1
+                        view.removeFromSuperview()
+                })
+        }
+
+    }
+    
     func showAnimated() {
         
         deleteParenViewHeightConstraint.constant = 0

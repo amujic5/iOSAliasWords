@@ -57,17 +57,53 @@ extension UIView {
         }
     }
     
+    func addDashedBorder() -> CAShapeLayer {
+        
+        let shapeLayer:CAShapeLayer = CAShapeLayer()
+        let frameSize = self.frame.size
+        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
+        
+        shapeLayer.bounds = shapeRect
+        shapeLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = shapeLayer.borderColor
+        shapeLayer.lineWidth = 2
+        shapeLayer.lineJoin = kCALineJoinRound
+        shapeLayer.lineDashPattern = [6,3]
+        shapeLayer.path = UIBezierPath(roundedRect: shapeRect, cornerRadius: layer.cornerRadius).cgPath
+        
+        self.layer.addSublayer(shapeLayer)
+        
+        return shapeLayer
+    }
+
 }
 
+extension CAShapeLayer {
+    
+    func marchLayer() {
+        let positionAnimation = CABasicAnimation(keyPath: "lineDashPhase")
+        positionAnimation.fromValue = NSNumber(value: 0)
+        positionAnimation.toValue = NSNumber(value: 30)
+        positionAnimation.duration = 10
+        positionAnimation.repeatCount = 10000
+        positionAnimation.fillMode = kCAFillModeBoth
+        positionAnimation.isRemovedOnCompletion = true
+        
+        add(positionAnimation, forKey: "lineDashPhase")
+    }
+    
+}
 
 extension UILabel {
     func animateToFont(_ font: UIFont, withDuration duration: TimeInterval) {
         let oldFont = self.font
         let labelScale =  font.pointSize/oldFont!.pointSize
-        UIView.animate(withDuration: duration, animations: { 
+        UIView.animate(withDuration: duration, animations: {
             self.transform = CGAffineTransform(scaleX: labelScale, y: labelScale)
             }) { (_) in
-                self.font = font
+                //self.font = font
+                //self.sizeToFit()
         }
     }
 }

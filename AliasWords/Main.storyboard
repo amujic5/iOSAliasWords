@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shH-1x-tp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1265" y="310"/>
+            <point key="canvasLocation" x="-1574" y="255"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="JH2-xo-mPk">
@@ -70,6 +71,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="kHK-Ib-6hK" kind="custom" customClass="HomeToHowToPlaySegue" customModule="AliasWords" customModuleProvider="target" id="nlv-ot-J6W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-9i-1Wb">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +120,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1u-sc-e0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-593" y="310"/>
+        </scene>
+        <!--How To Play View Controller-->
+        <scene sceneID="n31-9j-dga">
+            <objects>
+                <viewController id="kHK-Ib-6hK" customClass="HowToPlayViewController" customModule="AliasWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fSA-Bc-gId"/>
+                        <viewControllerLayoutGuide type="bottom" id="UG9-YX-EkZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Kq-Ty-6Ix">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnR-lm-OHA">
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="0.70220905172413794" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fn-a6-stN">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW TO PLAY?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYF-b4-vXt">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY2-zE-sdD">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7qr-V4-hmc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <state key="normal" title="GOT IT">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Hw0-qb-o80" kind="custom" customClass="HowToPlayToHomeSegue" customModule="AliasWords" customModuleProvider="target" id="Qn2-4e-AZR"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-k8-BG0">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">This game consists of two or more teams playing against each other. Each team consists of two players.
+
+First player explains the word to the second player without using the root word. If the second player guesses the word, they get a point.  The game goes on until set time or point limit.
+
+Team that goes through all words in the least amount of time with most points is the winner.</string>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vEN-k8-BG0" firstAttribute="top" secondItem="nYF-b4-vXt" secondAttribute="bottom" constant="21" id="87J-Jj-5Kl"/>
+                                    <constraint firstAttribute="bottom" secondItem="mY2-zE-sdD" secondAttribute="bottom" id="UeA-b8-CKD"/>
+                                    <constraint firstAttribute="trailing" secondItem="mY2-zE-sdD" secondAttribute="trailing" id="dXm-lv-ceT"/>
+                                    <constraint firstItem="nYF-b4-vXt" firstAttribute="centerX" secondItem="9Fn-a6-stN" secondAttribute="centerX" id="eU8-31-Uh0"/>
+                                    <constraint firstAttribute="trailing" secondItem="vEN-k8-BG0" secondAttribute="trailing" constant="20" id="iuC-cl-oen"/>
+                                    <constraint firstItem="mY2-zE-sdD" firstAttribute="leading" secondItem="9Fn-a6-stN" secondAttribute="leading" id="jf9-7H-1zy"/>
+                                    <constraint firstItem="mY2-zE-sdD" firstAttribute="top" secondItem="vEN-k8-BG0" secondAttribute="bottom" constant="10" id="oUw-Ao-f4u"/>
+                                    <constraint firstItem="vEN-k8-BG0" firstAttribute="leading" secondItem="9Fn-a6-stN" secondAttribute="leading" constant="20" id="qUV-Pg-Jtf"/>
+                                    <constraint firstItem="nYF-b4-vXt" firstAttribute="top" secondItem="9Fn-a6-stN" secondAttribute="top" constant="29" id="tnR-H3-VO8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hnR-lm-OHA" firstAttribute="top" secondItem="2Kq-Ty-6Ix" secondAttribute="top" id="1mm-tM-x9D"/>
+                            <constraint firstItem="9Fn-a6-stN" firstAttribute="leading" secondItem="2Kq-Ty-6Ix" secondAttribute="leading" constant="30" id="7Js-3G-8yx"/>
+                            <constraint firstItem="9Fn-a6-stN" firstAttribute="centerY" secondItem="2Kq-Ty-6Ix" secondAttribute="centerY" id="EOz-9X-gtt"/>
+                            <constraint firstItem="UG9-YX-EkZ" firstAttribute="top" secondItem="hnR-lm-OHA" secondAttribute="bottom" id="ICZ-Fs-4Vd"/>
+                            <constraint firstItem="9Fn-a6-stN" firstAttribute="centerX" secondItem="2Kq-Ty-6Ix" secondAttribute="centerX" id="bh6-Qk-dPd"/>
+                            <constraint firstAttribute="trailing" secondItem="9Fn-a6-stN" secondAttribute="trailing" constant="30" id="c19-kF-rDa"/>
+                            <constraint firstItem="9Fn-a6-stN" firstAttribute="height" secondItem="2Kq-Ty-6Ix" secondAttribute="height" multiplier="492:667" id="cDf-aZ-zKV"/>
+                            <constraint firstItem="hnR-lm-OHA" firstAttribute="leading" secondItem="2Kq-Ty-6Ix" secondAttribute="leading" id="cKf-A0-MN0"/>
+                            <constraint firstAttribute="trailing" secondItem="hnR-lm-OHA" secondAttribute="trailing" id="pdL-8L-j1G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="hnR-lm-OHA" id="yJq-wf-JsR"/>
+                        <outlet property="descriptionTextView" destination="vEN-k8-BG0" id="Pme-Ce-fao"/>
+                        <outlet property="dialogView" destination="9Fn-a6-stN" id="2ZL-ZT-ijs"/>
+                        <outlet property="gotItButton" destination="mY2-zE-sdD" id="lhF-bA-gSC"/>
+                        <outlet property="titleLabel" destination="nYF-b4-vXt" id="BJg-m5-Yh3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mpf-be-5Ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1252" y="1112"/>
         </scene>
         <!--New Game View Controller-->
         <scene sceneID="zg1-M9-eQa">
@@ -209,17 +303,41 @@
                                     <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="70" sectionHeaderHeight="4" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="n1s-hi-VHN">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
-                                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q9y-5P-Rgn">
-                                            <rect key="frame" x="0.0" y="126.5" width="335" height="72"/>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="osP-80-oEU">
+                                            <rect key="frame" x="0.0" y="127" width="335" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="create_team"/>
-                                            <connections>
-                                                <action selector="createNewTeamButtonClicked:" destination="m9O-KQ-X0I" eventType="touchUpInside" id="O7e-sE-0I8"/>
-                                            </connections>
-                                        </button>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9y-5P-Rgn">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="T3l-3F-OMS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <state key="normal" title="  CREATE TEAM" image="ic_create_team">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="createNewTeamButtonClicked:" destination="m9O-KQ-X0I" eventType="touchUpInside" id="O7e-sE-0I8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Q9y-5P-Rgn" secondAttribute="trailing" id="9jv-fh-Ed7"/>
+                                                <constraint firstItem="Q9y-5P-Rgn" firstAttribute="top" secondItem="osP-80-oEU" secondAttribute="top" constant="11" id="QCu-4Z-bpc"/>
+                                                <constraint firstItem="Q9y-5P-Rgn" firstAttribute="leading" secondItem="osP-80-oEU" secondAttribute="leading" id="bmS-6f-047"/>
+                                            </constraints>
+                                        </view>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewGameTableViewCell" rowHeight="70" id="5wx-oC-qxX" customClass="NewGameTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="55.5" width="335" height="70"/>
+                                                <rect key="frame" x="0.0" y="56" width="335" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5wx-oC-qxX" id="Or1-d0-HNs">
                                                     <frame key="frameInset" width="335" height="70"/>
@@ -318,6 +436,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="4cc-Iz-olQ" id="ydU-WK-xWJ"/>
+                        <outlet property="createTeamButton" destination="Q9y-5P-Rgn" id="J2S-Kc-4Se"/>
                         <outlet property="tableView" destination="n1s-hi-VHN" id="axZ-Jk-lQ8"/>
                         <outlet property="teamVSLabel" destination="rma-nV-N5D" id="o8w-cQ-pVd"/>
                         <outlet property="titleLabel" destination="kem-cw-6tR" id="xNF-NH-G11"/>
@@ -326,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ti0-CE-4VX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="310"/>
+            <point key="canvasLocation" x="244" y="309.89505247376314"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="IQ5-yN-osF">
@@ -673,13 +792,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGy-pr-CAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="613"/>
+            <point key="canvasLocation" x="1271" y="310"/>
         </scene>
     </scenes>
     <resources>
         <image name="back_button" width="11" height="17"/>
-        <image name="create_team" width="335" height="50"/>
         <image name="ic_check_box" width="24" height="24"/>
+        <image name="ic_create_team" width="15" height="15"/>
         <image name="ic_settings" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>

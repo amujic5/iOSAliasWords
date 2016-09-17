@@ -15,15 +15,22 @@ final class NewGameViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var teamVSLabel: UILabel!
+    @IBOutlet weak var createTeamButton: UIButton!
     
     var teams: [Team] = []
     var playingTeams: [Team] {
-        return teams.filter{return $0.playing}
+        return teams.filter { return $0.playing }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateVSLabel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let layer = createTeamButton.addDashedBorder()
+        layer.marchLayer()
     }
 
     // MARK: Private
@@ -45,7 +52,7 @@ final class NewGameViewController: UIViewController {
         teamVSLabel.attributedText = attributedString
     }
 
-// MARK: action
+    // MARK: action
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
         let _ = navigationController?.popViewController(animated: true)
@@ -54,7 +61,7 @@ final class NewGameViewController: UIViewController {
     @IBAction func createNewTeamButtonClicked(_ sender: UIButton) {
         let addEditTeamView: AddEditTeamView = AddEditTeamView.initViewWithOwner(self)
         view.addSubview(addEditTeamView)
-        addEditTeamView.showAnimated()
+        addEditTeamView.createTeam(createButton: sender)
         addEditTeamView.delegate = self
     }
     
