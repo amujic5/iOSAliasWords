@@ -19,6 +19,7 @@ final class SettingsViewController: UIViewController {
     
     @IBOutlet weak var rightStackViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var vsParentView: UIView!
     @IBOutlet weak var vsLabel: UILabel!
     
@@ -29,8 +30,13 @@ final class SettingsViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    var teams: [Team] = [] 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fillStackView()
         
         //vs
         vsParentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -55,33 +61,6 @@ final class SettingsViewController: UIViewController {
             }, completion: nil)
         
         
-        let l1 = newLabel()
-        let l2 = newLabel()
-        let l3 = newLabel()
-        let l4 = newLabel()
-        let l5 = newLabel()
-        
-        leftStackView.addArrangedSubview(l1)
-        leftStackView.addArrangedSubview(l2)
-        leftStackView.addArrangedSubview(l4)
-        
-        rightStackView.addArrangedSubview(l3)
-        rightStackView.addArrangedSubview(l5)
-        
-        stackViewHeightConstraint.constant = CGFloat(leftStackView.arrangedSubviews.count * 50 - 10)
-        rightStackViewHeightConstraint.constant = CGFloat(rightStackView.arrangedSubviews.count * 50 - 10)
-        
-        let allTeamViews = leftStackView.arrangedSubviews + rightStackView.arrangedSubviews
-        
-        for (index, view) in allTeamViews.enumerated() {
-            view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-            view.alpha = 0
-            UIView.animate(withDuration: 0.7, delay: 0.25 + Double(index) * 0.03, usingSpringWithDamping: 0.45, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
-                view.transform = CGAffineTransform.identity
-                view.alpha = 1
-                }, completion: nil)
-        }
-        
         totalScoreLabel.format = "%d"
         totalScoreLabel.method = .easeInOut
         totalScoreLabel.count(from: 60, to: 100, withDuration: 0.9)
@@ -93,10 +72,39 @@ final class SettingsViewController: UIViewController {
             })
         }
 
+    }
+    
+    func fillStackView() {
         
+        for (index, team) in teams.enumerated() {
+            let label = self.newLabel()
+            label.text = team.teamName
+            if index % 2 == 0 {
+                leftStackView.addArrangedSubview(label)
+            } else {
+                rightStackView.addArrangedSubview(label)
+            }
+        }
         
-        // cv
-        collectionView.reloadDataWithCompletion { 
+        stackViewHeightConstraint.constant = CGFloat(leftStackView.arrangedSubviews.count * 50 - 10)
+        rightStackViewHeightConstraint.constant = CGFloat(rightStackView.arrangedSubviews.count * 50 - 10)
+    }
+    
+    func animateStackView() {
+        let allTeamViews = leftStackView.arrangedSubviews + rightStackView.arrangedSubviews
+        
+        for (index, view) in allTeamViews.enumerated() {
+            view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            view.alpha = 0
+            UIView.animate(withDuration: 0.7, delay: 0.25 + Double(index) * 0.03, usingSpringWithDamping: 0.45, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
+                view.transform = CGAffineTransform.identity
+                view.alpha = 1
+                }, completion: nil)
+        }
+    }
+    
+    func animateCollectionView() {
+        collectionView.reloadDataWithCompletion {
             for (index, view) in self.collectionView.visibleCells.enumerated() {
                 view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
                 view.alpha = 0

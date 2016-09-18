@@ -243,61 +243,6 @@ Team that goes through all words in the least amount of time with most points is
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="191-OW-LmD">
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oL-2Y-T8o">
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="0F0-6Y-iwm"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="START THE GAME">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="startGameButtonClicked:" destination="m9O-KQ-X0I" eventType="touchUpInside" id="XHn-52-RWO"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redneck One VS Redneck One VS Redneck One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rma-nV-N5D">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="6oL-2Y-T8o" firstAttribute="top" secondItem="rma-nV-N5D" secondAttribute="bottom" constant="8" id="7FY-ez-HfB"/>
-                                    <constraint firstItem="rma-nV-N5D" firstAttribute="leading" secondItem="191-OW-LmD" secondAttribute="leading" constant="15" id="81C-mv-SCf"/>
-                                    <constraint firstAttribute="bottom" secondItem="6oL-2Y-T8o" secondAttribute="bottom" constant="15" id="AG7-td-t85"/>
-                                    <constraint firstItem="6oL-2Y-T8o" firstAttribute="leading" secondItem="191-OW-LmD" secondAttribute="leading" constant="20" id="Pay-xr-ApG"/>
-                                    <constraint firstItem="rma-nV-N5D" firstAttribute="top" secondItem="191-OW-LmD" secondAttribute="top" constant="10" id="fiS-4J-UCg"/>
-                                    <constraint firstAttribute="trailing" secondItem="rma-nV-N5D" secondAttribute="trailing" constant="15" id="hrt-1D-Mnt"/>
-                                    <constraint firstAttribute="trailing" secondItem="6oL-2Y-T8o" secondAttribute="trailing" constant="20" id="lV0-Wr-DuD"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.37915558510638298" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHR-v0-KbH">
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Ji5-cB-6Vx"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="mZY-cZ-5aC"/>
-                                </constraints>
-                                <state key="normal" image="ic_settings"/>
-                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-i3-1XS">
                                 <subviews>
                                     <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="70" sectionHeaderHeight="4" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="n1s-hi-VHN">
@@ -408,18 +353,63 @@ Team that goes through all words in the least amount of time with most points is
                                     <constraint firstItem="n1s-hi-VHN" firstAttribute="leading" secondItem="0Ke-i3-1XS" secondAttribute="leading" constant="20" id="Rnp-4x-jP4"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="191-OW-LmD">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oL-2Y-T8o">
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="0F0-6Y-iwm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="START THE GAME">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startGameButtonClicked:" destination="m9O-KQ-X0I" eventType="touchUpInside" id="XHn-52-RWO"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redneck One VS Redneck One VS Redneck One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rma-nV-N5D">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6oL-2Y-T8o" firstAttribute="top" secondItem="rma-nV-N5D" secondAttribute="bottom" constant="8" id="7FY-ez-HfB"/>
+                                    <constraint firstItem="rma-nV-N5D" firstAttribute="leading" secondItem="191-OW-LmD" secondAttribute="leading" constant="15" id="81C-mv-SCf"/>
+                                    <constraint firstAttribute="bottom" secondItem="6oL-2Y-T8o" secondAttribute="bottom" constant="15" id="AG7-td-t85"/>
+                                    <constraint firstItem="6oL-2Y-T8o" firstAttribute="leading" secondItem="191-OW-LmD" secondAttribute="leading" constant="20" id="Pay-xr-ApG"/>
+                                    <constraint firstItem="rma-nV-N5D" firstAttribute="top" secondItem="191-OW-LmD" secondAttribute="top" constant="10" id="fiS-4J-UCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="rma-nV-N5D" secondAttribute="trailing" constant="15" id="hrt-1D-Mnt"/>
+                                    <constraint firstAttribute="trailing" secondItem="6oL-2Y-T8o" secondAttribute="trailing" constant="20" id="lV0-Wr-DuD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.37915558510638298" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kjM-5o-pYj" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" constant="20" id="1B0-Ld-3we"/>
                             <constraint firstItem="0Ke-i3-1XS" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" id="4YW-dX-pOS"/>
-                            <constraint firstAttribute="trailing" secondItem="CHR-v0-KbH" secondAttribute="trailing" constant="20" id="68m-l5-i9N"/>
                             <constraint firstAttribute="trailing" secondItem="191-OW-LmD" secondAttribute="trailing" constant="10" id="7aJ-h7-mRQ"/>
                             <constraint firstItem="kjM-5o-pYj" firstAttribute="top" secondItem="4cc-Iz-olQ" secondAttribute="bottom" constant="25" id="7qG-iT-1qT"/>
                             <constraint firstItem="191-OW-LmD" firstAttribute="top" secondItem="0Ke-i3-1XS" secondAttribute="bottom" constant="5" id="80F-fP-siZ"/>
-                            <constraint firstItem="CHR-v0-KbH" firstAttribute="top" secondItem="kem-cw-6tR" secondAttribute="top" id="89c-Fq-XsR"/>
                             <constraint firstItem="kem-cw-6tR" firstAttribute="leading" secondItem="4cc-Iz-olQ" secondAttribute="trailing" constant="20" id="ADI-xG-Egr"/>
-                            <constraint firstItem="CHR-v0-KbH" firstAttribute="centerY" secondItem="kem-cw-6tR" secondAttribute="centerY" id="OpN-WB-tMT"/>
                             <constraint firstItem="4cc-Iz-olQ" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" constant="10" id="Q1V-qL-FMM"/>
                             <constraint firstItem="0Ke-i3-1XS" firstAttribute="top" secondItem="kjM-5o-pYj" secondAttribute="bottom" constant="5" id="VXE-nP-hN9"/>
                             <constraint firstItem="4cc-Iz-olQ" firstAttribute="top" secondItem="Kdf-YX-i3Z" secondAttribute="bottom" constant="20" id="i69-Yg-ZBm"/>
@@ -428,24 +418,22 @@ Team that goes through all words in the least amount of time with most points is
                             <constraint firstItem="kem-cw-6tR" firstAttribute="centerY" secondItem="4cc-Iz-olQ" secondAttribute="centerY" id="z4t-Sf-i4t"/>
                             <constraint firstItem="191-OW-LmD" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" constant="10" id="zes-Xa-ivt"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="89c-Fq-XsR"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="4cc-Iz-olQ" id="ydU-WK-xWJ"/>
+                        <outlet property="bottomParentView" destination="191-OW-LmD" id="Xv6-bF-hMc"/>
                         <outlet property="createTeamButton" destination="Q9y-5P-Rgn" id="J2S-Kc-4Se"/>
+                        <outlet property="startTheGameButton" destination="6oL-2Y-T8o" id="NHU-M6-T3q"/>
+                        <outlet property="subtitleLabel" destination="kjM-5o-pYj" id="WHN-KJ-a4t"/>
                         <outlet property="tableView" destination="n1s-hi-VHN" id="axZ-Jk-lQ8"/>
                         <outlet property="teamVSLabel" destination="rma-nV-N5D" id="o8w-cQ-pVd"/>
                         <outlet property="titleLabel" destination="kem-cw-6tR" id="xNF-NH-G11"/>
-                        <segue destination="8BQ-1d-G11" kind="show" identifier="SettingsViewController" id="als-GS-N2Y"/>
+                        <segue destination="8BQ-1d-G11" kind="show" identifier="SettingsViewController" customClass="NewGameToSettingsSegue" customModule="AliasWords" customModuleProvider="target" id="als-GS-N2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ti0-CE-4VX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="309.89505247376314"/>
+            <point key="canvasLocation" x="346" y="310"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="IQ5-yN-osF">
@@ -780,6 +768,7 @@ Team that goes through all words in the least amount of time with most points is
                         <outlet property="collectionView" destination="m0h-Em-rpl" id="XCg-FB-fnb"/>
                         <outlet property="collectionViewHeightConstraint" destination="hpw-GY-ioy" id="Q6v-ex-M2K"/>
                         <outlet property="leftStackView" destination="zLh-dV-jOA" id="fCq-79-lPQ"/>
+                        <outlet property="playButton" destination="VZb-SP-VpH" id="emd-2S-gsQ"/>
                         <outlet property="rightStackView" destination="MKT-al-g5W" id="lT0-I1-fad"/>
                         <outlet property="rightStackViewHeightConstraint" destination="R8k-Wh-SSd" id="K6A-z9-C5D"/>
                         <outlet property="scoreSlider" destination="fCy-3R-jYj" id="hJ4-jo-NAN"/>
@@ -799,7 +788,6 @@ Team that goes through all words in the least amount of time with most points is
         <image name="back_button" width="11" height="17"/>
         <image name="ic_check_box" width="24" height="24"/>
         <image name="ic_create_team" width="15" height="15"/>
-        <image name="ic_settings" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bcD-cB-P4q"/>

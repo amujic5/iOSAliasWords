@@ -11,12 +11,15 @@ import UIKit
 final class NewGameViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var teamVSLabel: UILabel!
     @IBOutlet weak var createTeamButton: UIButton!
     
+    @IBOutlet weak var bottomParentView: UIView!
+    @IBOutlet weak var startTheGameButton: UIButton!
     var teams: [Team] = []
     var playingTeams: [Team] {
         return teams.filter { return $0.playing }
