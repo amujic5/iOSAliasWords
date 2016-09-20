@@ -459,8 +459,7 @@ Team that goes through all words in the least amount of time with most points is
                                 </constraints>
                                 <state key="normal" image="back_button"/>
                                 <connections>
-                                    <action selector="backButtonClicked:" destination="8BQ-1d-G11" eventType="touchUpInside" id="Diy-D1-NXP"/>
-                                    <action selector="backButtonClicked:" destination="m9O-KQ-X0I" eventType="touchUpInside" id="zp2-O4-y3y"/>
+                                    <segue destination="m9O-KQ-X0I" kind="custom" customClass="SettingsToNewGameSegue" customModule="AliasWords" customModuleProvider="target" id="2Z2-5o-v84"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OnF-Zr-gGy">
@@ -781,7 +780,7 @@ Team that goes through all words in the least amount of time with most points is
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGy-pr-CAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="310"/>
+            <point key="canvasLocation" x="1337" y="189"/>
         </scene>
     </scenes>
     <resources>
@@ -791,5 +790,6 @@ Team that goes through all words in the least amount of time with most points is
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bcD-cB-P4q"/>
+        <segue reference="2Z2-5o-v84"/>
     </inferredMetricsTieBreakers>
 </document>

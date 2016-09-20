@@ -23,6 +23,7 @@
 		5702CD091D80C5A2007405E6 /* AddEditTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702CD081D80C5A2007405E6 /* AddEditTeamView.swift */; };
 		5702CD0B1D80C5BE007405E6 /* AddEditTeamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5702CD0A1D80C5BE007405E6 /* AddEditTeamView.xib */; };
 		573A9B341D8E04990062A911 /* NewGameToSettingsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */; };
+		577414941D909AFB00D0214B /* SettingsToNewGameSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */; };
 		57A778D11D8C5215005CD4AD /* DictionaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778D01D8C5215005CD4AD /* DictionaryCollectionViewCell.swift */; };
 		57A778D41D8C5CE5005CD4AD /* HomeToNewGameSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778D31D8C5CE5005CD4AD /* HomeToNewGameSegue.swift */; };
 		57A778D61D8C9226005CD4AD /* NewGameToHomeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778D51D8C9226005CD4AD /* NewGameToHomeSegue.swift */; };
@@ -51,6 +52,7 @@
 		5702CD051D80C16E007405E6 /* CellMagic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellMagic.swift; sourceTree = "<group>"; };
 		5702CD081D80C5A2007405E6 /* AddEditTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditTeamView.swift; sourceTree = "<group>"; };
 		5702CD0A1D80C5BE007405E6 /* AddEditTeamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEditTeamView.xib; sourceTree = "<group>"; };
+		57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsToNewGameSegue.swift; sourceTree = "<group>"; };
 		573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameToSettingsSegue.swift; sourceTree = "<group>"; };
 		57A778D01D8C5215005CD4AD /* DictionaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		57A778D31D8C5CE5005CD4AD /* HomeToNewGameSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeToNewGameSegue.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		57A778D21D8C5CAE005CD4AD /* Segues */ = {
 			isa = PBXGroup;
 			children = (
+				57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */,
 				573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */,
 				57A778DC1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift */,
 				57A778DA1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift */,
@@ -372,6 +375,7 @@
 				570149061D7A2C0C000C1551 /* Team.swift in Sources */,
 				570148FC1D7A2223000C1551 /* HomeViewController.swift in Sources */,
 				570149081D7A2E35000C1551 /* Word.swift in Sources */,
+				577414941D909AFB00D0214B /* SettingsToNewGameSegue.swift in Sources */,
 				57A778D91D8D4BC6005CD4AD /* HowToPlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

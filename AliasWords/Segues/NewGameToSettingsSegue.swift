@@ -135,6 +135,7 @@ extension NewGameToSettingsSegue: UIViewControllerAnimatedTransitioning {
                 view.alpha = 1
                 view.backgroundColor = UIColor.black
                 label.textColor = UIColor.white
+                cell.alpha = 0
                 }, completion: { (_) in
                     
                     let indexWithOffset = index + offset
@@ -154,6 +155,7 @@ extension NewGameToSettingsSegue: UIViewControllerAnimatedTransitioning {
                         view.frame = stackView.convert(stackView.arrangedSubviews[stackIndex].frame, to: nil)
                         }, completion: { (_) in
                             // end
+                            cell.alpha = 1
                             toViewController.leftStackView.alpha = 1
                             toViewController.rightStackView.alpha = 1
                             view.removeFromSuperview()

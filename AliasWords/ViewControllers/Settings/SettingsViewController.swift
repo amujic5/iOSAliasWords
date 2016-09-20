@@ -124,7 +124,6 @@ final class SettingsViewController: UIViewController {
     
     func newLabel() -> UILabel {
         let label = UILabel()
-        label.text = "aadfsd"
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.backgroundColor = UIColor.black
@@ -135,11 +134,6 @@ final class SettingsViewController: UIViewController {
     }
     
     // MARK: Action
-    
-    @IBAction func backButtonClicked(_ sender: UIButton) {
-        let _ = self.navigationController?.popViewController(animated: true)
-    }
-    
 
 }
 
