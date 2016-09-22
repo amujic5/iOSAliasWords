@@ -249,7 +249,7 @@ Team that goes through all words in the least amount of time with most points is
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
                                         <view key="tableFooterView" contentMode="scaleToFill" id="osP-80-oEU">
-                                            <rect key="frame" x="0.0" y="127" width="335" height="59"/>
+                                            <rect key="frame" x="0.0" y="126.5" width="335" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9y-5P-Rgn">
@@ -282,7 +282,7 @@ Team that goes through all words in the least amount of time with most points is
                                         </view>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewGameTableViewCell" rowHeight="70" id="5wx-oC-qxX" customClass="NewGameTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="56" width="335" height="70"/>
+                                                <rect key="frame" x="0.0" y="55.5" width="335" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5wx-oC-qxX" id="Or1-d0-HNs">
                                                     <frame key="frameInset" width="335" height="70"/>
@@ -742,6 +742,7 @@ Team that goes through all words in the least amount of time with most points is
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nHh-QB-0K9" firstAttribute="centerY" secondItem="Cg9-yH-UBL" secondAttribute="centerY" id="0DJ-uv-4Cp"/>
                             <constraint firstItem="WrB-9l-N4I" firstAttribute="top" secondItem="VZb-SP-VpH" secondAttribute="bottom" constant="20" id="1Tf-K5-6wk"/>
@@ -761,6 +762,9 @@ Team that goes through all words in the least amount of time with most points is
                                 <exclude reference="UjH-cC-TTL"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="grn-Z4-C79" appends="YES" id="BGP-jS-tMU"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Cg9-yH-UBL" id="d2g-ZL-97k"/>
@@ -779,6 +783,12 @@ Team that goes through all words in the least amount of time with most points is
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGy-pr-CAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="grn-Z4-C79">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="swipeToBack:" destination="8BQ-1d-G11" id="1bu-e2-Eha"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1337" y="189"/>
         </scene>

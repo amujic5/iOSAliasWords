@@ -10,29 +10,93 @@ import UIKit
 
 final class SettingsToNewGameSegue: UIStoryboardSegue {
     
+    var isInteractive: Bool = false
+    let settingToNewGameAnimator: SettingsToNewGameAnimator = SettingsToNewGameAnimator()
+    
+    init(identifier: String?, source: UIViewController, destination: UIViewController, isInteractive: Bool = false) {
+        super.init(identifier: identifier, source: source, destination: destination)
+        self.isInteractive = isInteractive
+    }
+    
+    override init(identifier: String?, source: UIViewController, destination: UIViewController) {
+        super.init(identifier: identifier, source: source, destination: destination)
+    }
+    
     override func perform() {
         let settingsViewController = source as! SettingsViewController
-        
+
         settingsViewController.navigationController?.delegate = self
         let _ = settingsViewController.navigationController?.popViewController(animated: true)
+    }
+    
+    func handlePan(recognizer: UIPanGestureRecognizer) {
+        
+        let translation = recognizer.translation(in: recognizer.view!.superview!)
+        guard let storedContext = settingToNewGameAnimator.storedContext else {
+            return
+        }
+        
+        let progressWidth = recognizer.view!.superview!.frame.width
+        
+        var progress: CGFloat = -translation.x / progressWidth
+        progress = min(max(progress, 0.01), 0.99)
+        
+        switch recognizer.state {
+        case .changed:
+            
+            settingToNewGameAnimator.update(progress)
+            
+        case .cancelled, .ended:
+            let transitionLayer = storedContext.containerView.layer
+            transitionLayer.beginTime = CACurrentMediaTime()
+            
+            let translationVelocity = recognizer.velocity(in:recognizer.view!.superview!)
+            let progressVelocity: CGFloat = -translationVelocity.x / progressWidth
+            
+            if progressVelocity > 0.5 {
+                settingToNewGameAnimator.completionSpeed = 1
+                settingToNewGameAnimator.finish()
+            } else {
+                settingToNewGameAnimator.completionSpeed = 1
+                settingToNewGameAnimator.cancel()
+            }
+
+        default:
+            break
+        }
+        
     }
 }
 
 extension SettingsToNewGameSegue: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
+        return settingToNewGameAnimator
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        return isInteractive ? settingToNewGameAnimator : nil
     }
     
 }
 
-extension SettingsToNewGameSegue: UIViewControllerAnimatedTransitioning {
+
+final class SettingsToNewGameAnimator: UIPercentDrivenInteractiveTransition {
+    
+    weak var storedContext: UIViewControllerContextTransitioning?
+}
+
+extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
+    
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        storedContext = transitionContext
         
         let fromViewController: SettingsViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! SettingsViewController
         let toViewController: NewGameViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! NewGameViewController
@@ -42,9 +106,7 @@ extension SettingsToNewGameSegue: UIViewControllerAnimatedTransitioning {
         containerView.sendSubview(toBack: toViewController.view)
         
         
-
-        
-//        bottom buttton animation
+        //        bottom buttton animation
         let buttonLabel = UILabel()
         buttonLabel.textAlignment = .center
         buttonLabel.backgroundColor = toViewController.startTheGameButton.backgroundColor
@@ -81,8 +143,8 @@ extension SettingsToNewGameSegue: UIViewControllerAnimatedTransitioning {
             $0.alpha = 0.5
         }
         toViewController.tableView.tableFooterView?.alpha = 0
-        delay(seconds: 0.3) { 
-            UIView.animate(withDuration: 0.2, animations: { 
+        delay(seconds: 0.3) {
+            UIView.animate(withDuration: 0.2, animations: {
                 fromViewController.view.alpha = 0
             })
             toViewController.tableView.tableFooterView?.fadeUp()
@@ -92,14 +154,14 @@ extension SettingsToNewGameSegue: UIViewControllerAnimatedTransitioning {
         let playingCells = toViewController.tableView.visibleCells.filter { cell in
             let index = toViewController.tableView.indexPath(for: cell)!.section
             return toViewController.teams[index].playing
-        } . flatMap { cell -> NewGameTableViewCell? in
-            return cell as? NewGameTableViewCell
+            } . flatMap { cell -> NewGameTableViewCell? in
+                return cell as? NewGameTableViewCell
         }
         
         let firstCellPosition = Int(toViewController.tableView.indexPath(for: playingCells[0])!.section)
         let offset = toViewController.teams[0..<firstCellPosition].filter {
             return $0.playing
-        }.count
+            }.count
         
         
         playingCells.enumerated().forEach { (index, cell) in
@@ -153,8 +215,9 @@ extension SettingsToNewGameSegue: UIViewControllerAnimatedTransitioning {
             })
         }
     }
-
+    
 }
+
 
 
 

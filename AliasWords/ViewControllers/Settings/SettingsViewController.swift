@@ -30,6 +30,7 @@ final class SettingsViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var settingsToNewGameInteractiveSegue: SettingsToNewGameSegue?
     
     var teams: [Team] = [] 
     
@@ -135,6 +136,26 @@ final class SettingsViewController: UIViewController {
     
     // MARK: Action
 
+    @IBAction func swipeToBack(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        
+        switch recognizer.state {
+        case .began:
+            
+            let viewControllers = navigationController!.viewControllers.dropLast()
+            settingsToNewGameInteractiveSegue = SettingsToNewGameSegue(identifier: nil, source: self, destination: viewControllers.last!, isInteractive: true)
+            settingsToNewGameInteractiveSegue?.perform()
+            settingsToNewGameInteractiveSegue?.handlePan(recognizer: recognizer)
+            
+        case .cancelled, .ended:
+            settingsToNewGameInteractiveSegue?.handlePan(recognizer: recognizer)
+            settingsToNewGameInteractiveSegue = nil
+            
+        default:
+            settingsToNewGameInteractiveSegue?.handlePan(recognizer: recognizer)
+            break
+        }
+        
+    }
 }
 
 // MARK: UICollectionViewDataSource
