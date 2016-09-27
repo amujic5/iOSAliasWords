@@ -10,28 +10,95 @@ import UIKit
 
 final class NewGameToHomeSegue: UIStoryboardSegue {
     
+    var isInteractive: Bool = false
+    let newGameToHomeAnimator: NewGameToHomeAnimator = NewGameToHomeAnimator()
+    
+    init(identifier: String?, source: UIViewController, destination: UIViewController, isInteractive: Bool = false) {
+        super.init(identifier: identifier, source: source, destination: destination)
+        self.isInteractive = isInteractive
+    }
+    
+    override init(identifier: String?, source: UIViewController, destination: UIViewController) {
+        super.init(identifier: identifier, source: source, destination: destination)
+    }
+    
     override func perform() {
         let newGameViewController = source as! NewGameViewController
         newGameViewController.navigationController?.delegate = self
         let _ = newGameViewController.navigationController?.popViewController(animated: true)
+    }
+    
+    func handlePan(recognizer: UIPanGestureRecognizer) {
+        
+        let translation = recognizer.translation(in: recognizer.view!.superview!)
+        guard let storedContext = newGameToHomeAnimator.storedContext else {
+            return
+        }
+        
+        let progressWidth = recognizer.view!.superview!.frame.width
+        
+        var progress: CGFloat = translation.x / progressWidth
+        progress = min(max(progress, 0.01), 0.99)
+        
+        switch recognizer.state {
+        case .changed:
+            
+            newGameToHomeAnimator.update(progress)
+            
+        case .cancelled, .ended:
+            let transitionLayer = storedContext.containerView.layer
+            transitionLayer.beginTime = CACurrentMediaTime()
+            
+            let translationVelocity = recognizer.velocity(in:recognizer.view!.superview!)
+            let progressVelocity: CGFloat = translationVelocity.x / progressWidth
+            
+            print("prgores: \(progressVelocity)")
+            if progressVelocity > 0.5 {
+                newGameToHomeAnimator.completionSpeed = 1 - newGameToHomeAnimator.percentComplete
+                newGameToHomeAnimator.finish()
+            } else {
+                print("cancel")
+                newGameToHomeAnimator.completionSpeed = 1
+                newGameToHomeAnimator.cancel()
+            }
+            
+        default:
+            break
+        }
+        
     }
 }
 
 extension NewGameToHomeSegue: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
+        return newGameToHomeAnimator
     }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        return isInteractive ? newGameToHomeAnimator : nil
+    }
+    
     
 }
 
-extension NewGameToHomeSegue: UIViewControllerAnimatedTransitioning {
+// MARK: Animator
+
+final class NewGameToHomeAnimator: UIPercentDrivenInteractiveTransition {
+    
+    weak var storedContext: UIViewControllerContextTransitioning?
+}
+
+extension NewGameToHomeAnimator: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        storedContext = transitionContext
         
         let fromViewController: NewGameViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! NewGameViewController
         let toViewController: HomeViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! HomeViewController
@@ -72,14 +139,16 @@ extension NewGameToHomeSegue: UIViewControllerAnimatedTransitioning {
                 label.alpha = 0
                 }, completion: { (_) in
                     label.removeFromSuperview()
-                    transitionContext.completeTransition(true)
+                    if(transitionContext.transitionWasCancelled) {
+                        toViewController.view.removeFromSuperview()
+                    } else {
+                        fromViewController.view.removeFromSuperview()
+                    }
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
             
         }
     }
 }
-
-
-
 
 

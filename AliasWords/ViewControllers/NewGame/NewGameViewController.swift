@@ -10,6 +10,8 @@ import UIKit
 
 final class NewGameViewController: UIViewController {
 
+    var newGameToHomeInteractiveSegue: NewGameToHomeSegue?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
@@ -56,6 +58,30 @@ final class NewGameViewController: UIViewController {
     }
 
     // MARK: action
+    
+    @IBAction func swipeToBack(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        
+        switch recognizer.state {
+        case .began:
+            
+            let viewControllers = navigationController!.viewControllers.filter {
+                return $0.isKind(of: HomeViewController.self)
+            }
+            if let toViewController = viewControllers.first as? HomeViewController {
+                newGameToHomeInteractiveSegue = NewGameToHomeSegue(identifier: nil, source: self, destination: toViewController, isInteractive: true)
+            }
+            newGameToHomeInteractiveSegue?.perform()
+            newGameToHomeInteractiveSegue?.handlePan(recognizer: recognizer)
+            
+        case .ended:
+            newGameToHomeInteractiveSegue?.handlePan(recognizer: recognizer)
+            newGameToHomeInteractiveSegue = nil
+            
+        default:
+            newGameToHomeInteractiveSegue?.handlePan(recognizer: recognizer)
+            break
+        }
+    }
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
         let _ = navigationController?.popViewController(animated: true)

@@ -38,7 +38,7 @@ final class SettingsToNewGameSegue: UIStoryboardSegue {
         
         let progressWidth = recognizer.view!.superview!.frame.width
         
-        var progress: CGFloat = -translation.x / progressWidth
+        var progress: CGFloat = translation.x / progressWidth
         progress = min(max(progress, 0.01), 0.99)
         
         switch recognizer.state {
@@ -51,12 +51,14 @@ final class SettingsToNewGameSegue: UIStoryboardSegue {
             transitionLayer.beginTime = CACurrentMediaTime()
             
             let translationVelocity = recognizer.velocity(in:recognizer.view!.superview!)
-            let progressVelocity: CGFloat = -translationVelocity.x / progressWidth
+            let progressVelocity: CGFloat = translationVelocity.x / progressWidth
             
+            print("prgores: \(progressVelocity)")
             if progressVelocity > 0.5 {
-                settingToNewGameAnimator.completionSpeed = 1
+                settingToNewGameAnimator.completionSpeed = 1 - settingToNewGameAnimator.percentComplete
                 settingToNewGameAnimator.finish()
             } else {
+                print("cancel")
                 settingToNewGameAnimator.completionSpeed = 1
                 settingToNewGameAnimator.cancel()
             }
@@ -91,7 +93,7 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
     
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 0.4
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -105,12 +107,11 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toViewController.view)
         containerView.sendSubview(toBack: toViewController.view)
         
-        
-        //        bottom buttton animation
+        // bottom buttton animation
         let buttonLabel = UILabel()
         buttonLabel.textAlignment = .center
         buttonLabel.backgroundColor = toViewController.startTheGameButton.backgroundColor
-        //buttonLabel.text = fromViewController.playButton.titleLabel?.text
+        // buttonLabel.text = fromViewController.playButton.titleLabel?.text
         buttonLabel.text = toViewController.startTheGameButton.titleLabel?.text
         buttonLabel.font = fromViewController.playButton.titleLabel?.font
         buttonLabel.textColor = fromViewController.playButton.titleLabel?.textColor
@@ -118,19 +119,15 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
         buttonLabel.frame = fromViewController.playButton.frame
         buttonLabel.layer.cornerRadius = fromViewController.playButton.layer.cornerRadius
         buttonLabel.layer.masksToBounds = fromViewController.playButton.layer.masksToBounds
-        
-        fromViewController.playButton.alpha = 0
-        delay(seconds: 0.1) {
-            buttonLabel.animateToFont(toViewController.startTheGameButton.titleLabel!.font, withDuration: 0.3)
-            UIView.animate(withDuration: 0.3, animations: {
-                buttonLabel.center = toViewController.startTheGameButton.superview!.convert(toViewController.startTheGameButton.center, to: nil)
-                
-                buttonLabel.transform = CGAffineTransform(scaleX: toViewController.startTheGameButton.frame.width/buttonLabel.frame.width, y: toViewController.startTheGameButton.frame.height/buttonLabel.frame.height)
+
+        buttonLabel.animateToFont(toViewController.startTheGameButton.titleLabel!.font, withDuration: 0.4)
+        UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: [], animations: {
+            fromViewController.playButton.alpha = 0
+            buttonLabel.center = toViewController.startTheGameButton.superview!.convert(toViewController.startTheGameButton.center, to: nil)
+            
+            buttonLabel.transform = CGAffineTransform(scaleX: toViewController.startTheGameButton.frame.width/buttonLabel.frame.width, y: toViewController.startTheGameButton.frame.height/buttonLabel.frame.height)
             }) { (_) in
-                delay(seconds: 0.2, completion: {
-                    buttonLabel.removeFromSuperview()
-                })
-            }
+                buttonLabel.removeFromSuperview()
         }
         
         // not playing
@@ -144,11 +141,13 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
         }
         toViewController.tableView.tableFooterView?.alpha = 0
         delay(seconds: 0.3) {
-            UIView.animate(withDuration: 0.2, animations: {
-                fromViewController.view.alpha = 0
-            })
             toViewController.tableView.tableFooterView?.fadeUp()
         }
+        UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
+            fromViewController.view.alpha = 0
+            notPlayingCells.forEach {
+                $0.alpha = 1            }
+            }, completion: nil)
         
         // animate cells to labels
         let playingCells = toViewController.tableView.visibleCells.filter { cell in
@@ -163,6 +162,15 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
             return $0.playing
             }.count
         
+        UIView.animate(withDuration: 0.01, animations: {
+            fromViewController.vsParentView.alpha = 0
+            fromViewController.leftStackView.alpha = 0
+            fromViewController.rightStackView.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            fromViewController.leftStackView.superview?.alpha = 0
+        })
         
         playingCells.enumerated().forEach { (index, cell) in
             
@@ -180,38 +188,48 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
             view.frame = stackView.convert(stackLabel.frame, to: nil)
             view.backgroundColor = stackLabel.backgroundColor
             
-            let label = UILabel()
-            label.text = stackLabel.text
-            label.textColor = stackLabel.textColor
-            view.addSubview(label)
-            label.sizeToFit()
-            label.center = CGPoint(x: stackLabel.frame.width/2, y: stackLabel.frame.height/2)//(stackView.arrangedSubviews[0] as! UILabel).center
+            let toLabel = UILabel()
+            toLabel.text = stackLabel.text
+            toLabel.textColor = cell.teamNameLabel.textColor
+            view.addSubview(toLabel)
+            toLabel.sizeToFit()
+            toLabel.center = CGPoint(x: stackLabel.frame.width/2, y: stackLabel.frame.height/2)
+            
+            let fromLabel = UILabel()
+            fromLabel.text = stackLabel.text
+            fromLabel.textColor = stackLabel.textColor
+            view.addSubview(fromLabel)
+            fromLabel.sizeToFit()
+            fromLabel.center = CGPoint(x: stackLabel.frame.width/2, y: stackLabel.frame.height/2)
             
             cell.alpha = 0
-            UIView.animate(withDuration: 0.1, animations: {
+            
+            UIView.animate(withDuration: 0.1, delay: 0.3, options: [], animations: {
                 
-                fromViewController.leftStackView.superview?.alpha = 0
+                
+                }, completion: nil)
+            
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
+                
+                stackLabel.alpha = 0
+                fromLabel.alpha = 0
+                
+                view.backgroundColor = cell.backgroundColor
+                view.frame = cell.superview!.convert(cell.frame, to: nil)
+                fromLabel.frame = cell.teamNameLabel.frame
+                toLabel.frame = cell.teamNameLabel.frame
                 }, completion: { (_) in
-                    
-                    delay(seconds: 0.3, completion: {
-                        label.textColor = cell.teamNameLabel.textColor
-                    })
-                    
-                    UIView.animate(withDuration: 0.3, delay: 0.3, options: [], animations: {
-                        cell.alpha = 1
-                        view.alpha = 0
-                        }, completion: { (_) in
-                            view.removeFromSuperview()
-                    })
-                    
-                    UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
-                        view.backgroundColor = cell.backgroundColor
-                        view.frame = cell.superview!.convert(cell.frame, to: nil)
-                        label.frame = cell.teamNameLabel.frame
-                        }, completion: { (_) in
-                            // end
-                            transitionContext.completeTransition(true)
-                    })
+                    // end
+                    cell.alpha = 1
+                    view.removeFromSuperview()
+                    if index == 0 {
+                        if(transitionContext.transitionWasCancelled) {
+                            toViewController.view.removeFromSuperview()
+                        } else {
+                            fromViewController.view.removeFromSuperview()
+                        }
+                        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                    }
             })
         }
     }

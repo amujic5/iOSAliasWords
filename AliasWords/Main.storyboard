@@ -249,7 +249,7 @@ Team that goes through all words in the least amount of time with most points is
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
                                         <view key="tableFooterView" contentMode="scaleToFill" id="osP-80-oEU">
-                                            <rect key="frame" x="0.0" y="126.5" width="335" height="59"/>
+                                            <rect key="frame" x="0.0" y="127" width="335" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9y-5P-Rgn">
@@ -282,7 +282,7 @@ Team that goes through all words in the least amount of time with most points is
                                         </view>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewGameTableViewCell" rowHeight="70" id="5wx-oC-qxX" customClass="NewGameTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="55.5" width="335" height="70"/>
+                                                <rect key="frame" x="0.0" y="56" width="335" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5wx-oC-qxX" id="Or1-d0-HNs">
                                                     <frame key="frameInset" width="335" height="70"/>
@@ -403,6 +403,7 @@ Team that goes through all words in the least amount of time with most points is
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kjM-5o-pYj" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" constant="20" id="1B0-Ld-3we"/>
                             <constraint firstItem="0Ke-i3-1XS" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" id="4YW-dX-pOS"/>
@@ -418,6 +419,9 @@ Team that goes through all words in the least amount of time with most points is
                             <constraint firstItem="kem-cw-6tR" firstAttribute="centerY" secondItem="4cc-Iz-olQ" secondAttribute="centerY" id="z4t-Sf-i4t"/>
                             <constraint firstItem="191-OW-LmD" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" constant="10" id="zes-Xa-ivt"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DEm-Jp-2e9" appends="YES" id="2vx-mB-j2l"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="4cc-Iz-olQ" id="ydU-WK-xWJ"/>
@@ -432,8 +436,14 @@ Team that goes through all words in the least amount of time with most points is
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ti0-CE-4VX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="DEm-Jp-2e9">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="swipeToBack:" destination="m9O-KQ-X0I" id="Max-89-fUG"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="346" y="310"/>
+            <point key="canvasLocation" x="258" y="268"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="IQ5-yN-osF">
@@ -680,7 +690,7 @@ Team that goes through all words in the least amount of time with most points is
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="m0h-Em-rpl" firstAttribute="leading" secondItem="ixk-b9-hxc" secondAttribute="leading" id="5cu-O9-RcJ"/>
-                                                    <constraint firstItem="m0h-Em-rpl" firstAttribute="top" secondItem="h45-SC-PCm" secondAttribute="bottom" constant="2" id="KBb-8A-gWk"/>
+                                                    <constraint firstItem="m0h-Em-rpl" firstAttribute="top" secondItem="h45-SC-PCm" secondAttribute="bottom" constant="8" id="KBb-8A-gWk"/>
                                                     <constraint firstItem="h45-SC-PCm" firstAttribute="leading" secondItem="ixk-b9-hxc" secondAttribute="leading" constant="20" id="Ldz-UA-WVa"/>
                                                     <constraint firstItem="h45-SC-PCm" firstAttribute="top" secondItem="ixk-b9-hxc" secondAttribute="top" constant="29" id="ZA3-cN-IZi"/>
                                                     <constraint firstAttribute="trailing" secondItem="aeW-Kp-tNm" secondAttribute="trailing" constant="20" id="bzq-Og-7zd"/>
@@ -770,6 +780,7 @@ Team that goes through all words in the least amount of time with most points is
                         <outlet property="backButton" destination="Cg9-yH-UBL" id="d2g-ZL-97k"/>
                         <outlet property="collectionView" destination="m0h-Em-rpl" id="XCg-FB-fnb"/>
                         <outlet property="collectionViewHeightConstraint" destination="hpw-GY-ioy" id="Q6v-ex-M2K"/>
+                        <outlet property="dictionaryLabel" destination="aeW-Kp-tNm" id="Oql-Yo-m2m"/>
                         <outlet property="leftStackView" destination="zLh-dV-jOA" id="fCq-79-lPQ"/>
                         <outlet property="playButton" destination="VZb-SP-VpH" id="emd-2S-gsQ"/>
                         <outlet property="rightStackView" destination="MKT-al-g5W" id="lT0-I1-fad"/>

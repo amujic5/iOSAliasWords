@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: false)
+   
     }
 
 }

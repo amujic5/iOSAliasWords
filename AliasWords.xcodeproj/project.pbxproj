@@ -31,6 +31,9 @@
 		57A778DB1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778DA1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift */; };
 		57A778DD1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778DC1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift */; };
 		57B0C4D71D88A5510024CD07 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0C4D61D88A5510024CD07 /* SettingsViewController.swift */; };
+		57C508E61D95D24100D7DC20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C508E51D95D24100D7DC20 /* GoogleService-Info.plist */; };
+		57C508EA1D95DE6A00D7DC20 /* DictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C508E91D95DE6A00D7DC20 /* DictionaryService.swift */; };
+		57C508EC1D95DF1000D7DC20 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C508EB1D95DF1000D7DC20 /* Dictionary.swift */; };
 		C9221C86D86F1E450F4B7452 /* Pods_AliasWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF330C163339343E2CC6EA7 /* Pods_AliasWords.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,10 @@
 		57A778DA1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeToHowToPlaySegue.swift; sourceTree = "<group>"; };
 		57A778DC1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayToHomeSegue.swift; sourceTree = "<group>"; };
 		57B0C4D61D88A5510024CD07 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		57C508E51D95D24100D7DC20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57C508E71D95D6C500D7DC20 /* AliasWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AliasWords.entitlements; sourceTree = "<group>"; };
+		57C508E91D95DE6A00D7DC20 /* DictionaryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryService.swift; sourceTree = "<group>"; };
+		57C508EB1D95DF1000D7DC20 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		7F8707BC61C12A6B7CC5C7AD /* Pods-AliasWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliasWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-AliasWords/Pods-AliasWords.release.xcconfig"; sourceTree = "<group>"; };
 		EFC9963223C277490A1D96CB /* Pods-AliasWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliasWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AliasWords/Pods-AliasWords.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF330C163339343E2CC6EA7 /* Pods_AliasWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliasWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,9 +106,11 @@
 		570148E31D7A1F8A000C1551 /* AliasWords */ = {
 			isa = PBXGroup;
 			children = (
+				57C508E71D95D6C500D7DC20 /* AliasWords.entitlements */,
 				57A778D21D8C5CAE005CD4AD /* Segues */,
 				570148E41D7A1F8A000C1551 /* AppDelegate.swift */,
 				5701490C1D7A334A000C1551 /* words_hr.txt */,
+				57C508E81D95DE5000D7DC20 /* Services */,
 				570148FD1D7A24EE000C1551 /* Extensions */,
 				570148FA1D7A220C000C1551 /* ViewControllers */,
 				570149091D7A2FFD000C1551 /* Factory */,
@@ -109,6 +118,7 @@
 				570148EB1D7A1F8A000C1551 /* Assets.xcassets */,
 				570148ED1D7A1F8A000C1551 /* LaunchScreen.storyboard */,
 				570148F81D7A21C2000C1551 /* Main.storyboard */,
+				57C508E51D95D24100D7DC20 /* GoogleService-Info.plist */,
 				570148F01D7A1F8A000C1551 /* Info.plist */,
 			);
 			path = AliasWords;
@@ -138,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				570149051D7A2C0C000C1551 /* Team.swift */,
+				57C508EB1D95DF1000D7DC20 /* Dictionary.swift */,
 				570149071D7A2E35000C1551 /* Word.swift */,
 			);
 			path = Models;
@@ -190,10 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */,
+				57A778D51D8C9226005CD4AD /* NewGameToHomeSegue.swift */,
 				573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */,
 				57A778DC1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift */,
 				57A778DA1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift */,
-				57A778D51D8C9226005CD4AD /* NewGameToHomeSegue.swift */,
 				57A778D31D8C5CE5005CD4AD /* HomeToNewGameSegue.swift */,
 			);
 			path = Segues;
@@ -214,6 +225,14 @@
 				57A778CF1D8C51FE005CD4AD /* Cells */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		57C508E81D95DE5000D7DC20 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				57C508E91D95DE6A00D7DC20 /* DictionaryService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5E84A2E12D1FC7DFD7F903FD /* Frameworks */ = {
@@ -268,7 +287,13 @@
 				TargetAttributes = {
 					570148E01D7A1F8A000C1551 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KLD9S9KY48;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -300,6 +325,7 @@
 				5701490D1D7A334A000C1551 /* words_hr.txt in Resources */,
 				5702CD0B1D80C5BE007405E6 /* AddEditTeamView.xib in Resources */,
 				570148EC1D7A1F8A000C1551 /* Assets.xcassets in Resources */,
+				57C508E61D95D24100D7DC20 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,12 +395,14 @@
 				5702CD021D80C0F3007405E6 /* NewGameViewController.swift in Sources */,
 				57A778D41D8C5CE5005CD4AD /* HomeToNewGameSegue.swift in Sources */,
 				573A9B341D8E04990062A911 /* NewGameToSettingsSegue.swift in Sources */,
+				57C508EC1D95DF1000D7DC20 /* Dictionary.swift in Sources */,
 				57A778D11D8C5215005CD4AD /* DictionaryCollectionViewCell.swift in Sources */,
 				570148FF1D7A24FD000C1551 /* UIView.swift in Sources */,
 				5702CD041D80C128007405E6 /* NewGameTableViewCell.swift in Sources */,
 				570149061D7A2C0C000C1551 /* Team.swift in Sources */,
 				570148FC1D7A2223000C1551 /* HomeViewController.swift in Sources */,
 				570149081D7A2E35000C1551 /* Word.swift in Sources */,
+				57C508EA1D95DE6A00D7DC20 /* DictionaryService.swift in Sources */,
 				577414941D909AFB00D0214B /* SettingsToNewGameSegue.swift in Sources */,
 				57A778D91D8D4BC6005CD4AD /* HowToPlayViewController.swift in Sources */,
 			);
@@ -482,6 +510,8 @@
 			baseConfigurationReference = EFC9963223C277490A1D96CB /* Pods-AliasWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AliasWords/AliasWords.entitlements;
+				DEVELOPMENT_TEAM = KLD9S9KY48;
 				INFOPLIST_FILE = AliasWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AliasWords;
@@ -495,6 +525,8 @@
 			baseConfigurationReference = 7F8707BC61C12A6B7CC5C7AD /* Pods-AliasWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AliasWords/AliasWords.entitlements;
+				DEVELOPMENT_TEAM = KLD9S9KY48;
 				INFOPLIST_FILE = AliasWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AliasWords;

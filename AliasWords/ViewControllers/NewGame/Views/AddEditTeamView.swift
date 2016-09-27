@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol AddEditTeamViewDelegate: class {
     func createdNewTeam(_ team: Team, addEditTeamView: AddEditTeamView)
     func deletedTeam(_ team: Team, addEditTeamView: AddEditTeamView)
@@ -33,9 +32,11 @@ final class AddEditTeamView: UIView {
     override func awakeFromNib() {
         isHidden = true
         
-        self.firstPlayerTextField.delegate = self
-        self.secondPLayerTextField.delegate = self
-        self.teamNameTextField.delegate = self
+        firstPlayerTextField.delegate = self
+        secondPLayerTextField.delegate = self
+        teamNameTextField.delegate = self
+        
+        
         
     }
     

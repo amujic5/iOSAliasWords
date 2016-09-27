@@ -8,4 +8,8 @@ target 'AliasWords' do
   pod 'MGSwipeTableCell'
   pod "AHKNavigationController"
   pod 'UICountingLabel'
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 end

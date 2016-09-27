@@ -27,16 +27,20 @@ final class SettingsViewController: UIViewController {
     @IBOutlet weak var totalScoreLabel: UICountingLabel!
     @IBOutlet weak var scoreUnderscoreView: UIView!
     
+    
+    @IBOutlet weak var dictionaryLabel: UILabel!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var settingsToNewGameInteractiveSegue: SettingsToNewGameSegue?
     
-    var teams: [Team] = [] 
+    var teams: [Team] = []
+    var dictionaries: [Dictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadDictionaries()
         fillStackView()
         
         //vs
@@ -44,8 +48,6 @@ final class SettingsViewController: UIViewController {
         vsParentView.alpha = 0
         vsLabel.alpha = 0
         vsLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2/3))
-        
-
         
         UIView.animate(withDuration: 0.6, animations: { 
             self.vsParentView.transform = CGAffineTransform.identity
@@ -134,6 +136,19 @@ final class SettingsViewController: UIViewController {
         return label
     }
     
+    // MARK: Private
+
+    func loadDictionaries() {
+        DictionaryService.sharedInstance.dictionaries { (dictionaryResponse) in
+            switch dictionaryResponse {
+            case .success(let dictionaries):
+                self.dictionaries = dictionaries
+            case .failure(let error):
+                self.dictionaries = []
+            }
+        }
+    }
+    
     // MARK: Action
 
     @IBAction func swipeToBack(_ recognizer: UIScreenEdgePanGestureRecognizer) {
@@ -141,12 +156,16 @@ final class SettingsViewController: UIViewController {
         switch recognizer.state {
         case .began:
             
-            let viewControllers = navigationController!.viewControllers.dropLast()
-            settingsToNewGameInteractiveSegue = SettingsToNewGameSegue(identifier: nil, source: self, destination: viewControllers.last!, isInteractive: true)
+            let viewControllers = navigationController!.viewControllers.filter {
+                return $0.isKind(of: NewGameViewController.self)
+            }
+            if let toViewController = viewControllers.first as? NewGameViewController {
+                settingsToNewGameInteractiveSegue = SettingsToNewGameSegue(identifier: nil, source: self, destination: toViewController, isInteractive: true)
+            }
             settingsToNewGameInteractiveSegue?.perform()
             settingsToNewGameInteractiveSegue?.handlePan(recognizer: recognizer)
             
-        case .cancelled, .ended:
+        case .ended:
             settingsToNewGameInteractiveSegue?.handlePan(recognizer: recognizer)
             settingsToNewGameInteractiveSegue = nil
             
@@ -167,13 +186,15 @@ extension SettingsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return dictionaries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: DictionaryCollectionViewCell = collectionView.dequeueCellAtIndexPath(indexPath)
-        cell.titleLabel.text = "ENG"
+        
+        let dictionary = dictionaries[indexPath.row]
+        cell.titleLabel.text = dictionary.languageCode
         
         return cell
     }
@@ -188,8 +209,10 @@ extension SettingsViewController: UICollectionViewDelegate {
         collectionView.visibleCells.forEach {
             $0.backgroundColor = UIColor.gray
         }
-        
         collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.black
+        
+        let dictionary = dictionaries[indexPath.row]
+        dictionaryLabel.text = dictionary.language
     }
     
 }

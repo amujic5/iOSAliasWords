@@ -8,39 +8,21 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
 		<key>MGSwipeTableCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-AliasWords.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>ReactiveCocoa.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>Result.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>UICountingLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -60,27 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7975DA292D3DB73BA200BAC26B18B8F7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7D80C383E5183FF405CDDA68AC6FB2BE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C0A2839CD4145C25BCA3C59A1496457D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E80B51D59C32971D600C77162140790D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F772B374EC113B53E303F6C2480D7CBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
