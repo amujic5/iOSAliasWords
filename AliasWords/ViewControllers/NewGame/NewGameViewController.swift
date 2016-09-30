@@ -110,7 +110,11 @@ final class NewGameViewController: UIViewController {
 extension NewGameViewController: AddEditTeamViewDelegate {
     
     func deletedTeam(_ team: Team, addEditTeamView: AddEditTeamView) {
-        
+        if let teamIndex = teams.index(of: team) {
+            teams.remove(at: teamIndex)
+            let indexSet = IndexSet(integer: teamIndex)
+            tableView.deleteSections(indexSet, with: .automatic)
+        }
     }
     
     func createdNewTeam(_ team: Team, addEditTeamView: AddEditTeamView) {

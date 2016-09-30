@@ -16,6 +16,7 @@ final class NewGameToHomeSegue: UIStoryboardSegue {
     init(identifier: String?, source: UIViewController, destination: UIViewController, isInteractive: Bool = false) {
         super.init(identifier: identifier, source: source, destination: destination)
         self.isInteractive = isInteractive
+        self.newGameToHomeAnimator.isInteractive = isInteractive
     }
     
     override init(identifier: String?, source: UIViewController, destination: UIViewController) {
@@ -35,7 +36,7 @@ final class NewGameToHomeSegue: UIStoryboardSegue {
             return
         }
         
-        let progressWidth = recognizer.view!.superview!.frame.width
+        let progressWidth = recognizer.view!.superview!.frame.width * 0.8
         
         var progress: CGFloat = translation.x / progressWidth
         progress = min(max(progress, 0.01), 0.99)
@@ -52,8 +53,8 @@ final class NewGameToHomeSegue: UIStoryboardSegue {
             let translationVelocity = recognizer.velocity(in:recognizer.view!.superview!)
             let progressVelocity: CGFloat = translationVelocity.x / progressWidth
             
-            print("prgores: \(progressVelocity)")
-            if progressVelocity > 0.5 {
+            newGameToHomeAnimator.isInteractive = false
+            if progressVelocity > 0.5 || progress > 0.8 {
                 newGameToHomeAnimator.completionSpeed = 1 - newGameToHomeAnimator.percentComplete
                 newGameToHomeAnimator.finish()
             } else {
@@ -88,12 +89,13 @@ extension NewGameToHomeSegue: UINavigationControllerDelegate {
 final class NewGameToHomeAnimator: UIPercentDrivenInteractiveTransition {
     
     weak var storedContext: UIViewControllerContextTransitioning?
+    var isInteractive: Bool = false
 }
 
 extension NewGameToHomeAnimator: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 0.4
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -121,32 +123,59 @@ extension NewGameToHomeAnimator: UIViewControllerAnimatedTransitioning {
         }
         
         
-        label.animateToFont(toViewController.newGameButton.titleLabel!.font!, withDuration: 0.43)
-        UIView.animate(withDuration: 0.4, animations: {
-            label.center = toViewController.newGameButton.center
-        }) { (_) in
-            
-            fromViewController.view.alpha = 0
-            fromViewController.view.removeFromSuperview()
-            
-            toViewController.howToPlayButton.fadeUp()
-            toViewController.tellYourFriendsButton.fadeUp()
-            toViewController.titleLabel.fadeUp()
-            label.alpha = 0.3
-            
-            UIView.animate(withDuration: 0.2, animations: {
-                toViewController.newGameButton.alpha = 1
-                label.alpha = 0
-                }, completion: { (_) in
-                    label.removeFromSuperview()
-                    if(transitionContext.transitionWasCancelled) {
-                        toViewController.view.removeFromSuperview()
-                    } else {
-                        fromViewController.view.removeFromSuperview()
-                    }
-                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        if isInteractive {
+            // interactive
+            label.animateToFont(toViewController.newGameButton.titleLabel!.font!, withDuration: 0.3)
+            UIView.animate(withDuration: 0.3, animations: {
+                label.center = toViewController.newGameButton.center
             })
             
+            toViewController.howToPlayButton.fadeUp(duration: 0.4)
+            toViewController.tellYourFriendsButton.fadeUp(duration: 0.4)
+            toViewController.titleLabel.fadeUp(duration: 0.4)
+            
+            toViewController.newGameButton.alpha = 0
+            UIView.animate(withDuration: 0.7, animations: {
+                toViewController.newGameButton.alpha = 1
+            })
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
+                fromViewController.view.alpha = 0
+                label.alpha = 0
+            }) { (_) in
+                label.removeFromSuperview()
+                if(transitionContext.transitionWasCancelled) {
+                    toViewController.view.removeFromSuperview()
+                    newGameLabel.alpha = 1
+                } else {
+                    fromViewController.view.removeFromSuperview()
+                    toViewController.newGameButton.alpha = 1
+                }
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            }
+        } else {
+            // non interactive
+            
+            label.animateToFont(toViewController.newGameButton.titleLabel!.font!, withDuration: 0.33)
+            UIView.animate(withDuration: 0.3, animations: {
+                label.center = toViewController.newGameButton.center
+                
+            }) { (_) in
+                toViewController.howToPlayButton.fadeUp()
+                toViewController.tellYourFriendsButton.fadeUp()
+                toViewController.titleLabel.fadeUp()
+                
+                label.alpha = 0
+                fromViewController.view.alpha = 0
+                
+                UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseInOut, animations: {
+                    toViewController.newGameButton.alpha = 1
+                }) { (_) in
+                    label.removeFromSuperview()
+                    fromViewController.view.removeFromSuperview()
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                }
+            }
         }
     }
 }

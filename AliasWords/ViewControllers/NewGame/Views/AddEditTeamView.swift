@@ -35,9 +35,6 @@ final class AddEditTeamView: UIView {
         firstPlayerTextField.delegate = self
         secondPLayerTextField.delegate = self
         teamNameTextField.delegate = self
-        
-        
-        
     }
     
     func createTeam(createButton: UIButton) {
@@ -191,7 +188,10 @@ final class AddEditTeamView: UIView {
     // MARK: Action
     
     @IBAction func deleteButtonClicked(_ sender: UIButton) {
-        //delegate?.deletedTeam(Team(), addEditTeamView: self)
+        if let team = editingTeam {
+            delegate?.deletedTeam(team, addEditTeamView: self)
+            close()
+        }
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {

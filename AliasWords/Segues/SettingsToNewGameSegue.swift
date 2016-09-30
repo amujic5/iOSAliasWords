@@ -36,7 +36,7 @@ final class SettingsToNewGameSegue: UIStoryboardSegue {
             return
         }
         
-        let progressWidth = recognizer.view!.superview!.frame.width
+        let progressWidth = recognizer.view!.superview!.frame.width * 0.8
         
         var progress: CGFloat = translation.x / progressWidth
         progress = min(max(progress, 0.01), 0.99)
@@ -53,8 +53,8 @@ final class SettingsToNewGameSegue: UIStoryboardSegue {
             let translationVelocity = recognizer.velocity(in:recognizer.view!.superview!)
             let progressVelocity: CGFloat = translationVelocity.x / progressWidth
             
-            print("prgores: \(progressVelocity)")
-            if progressVelocity > 0.5 {
+            print("prgores: \(progress)")
+            if progressVelocity > 0.5 || progress > 0.7 {
                 settingToNewGameAnimator.completionSpeed = 1 - settingToNewGameAnimator.percentComplete
                 settingToNewGameAnimator.finish()
             } else {
@@ -140,9 +140,7 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
             $0.alpha = 0.5
         }
         toViewController.tableView.tableFooterView?.alpha = 0
-        delay(seconds: 0.3) {
-            toViewController.tableView.tableFooterView?.fadeUp()
-        }
+        toViewController.tableView.tableFooterView?.fadeUp(duration: 0.4)
         UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
             fromViewController.view.alpha = 0
             notPlayingCells.forEach {
@@ -203,11 +201,6 @@ extension SettingsToNewGameAnimator: UIViewControllerAnimatedTransitioning {
             fromLabel.center = CGPoint(x: stackLabel.frame.width/2, y: stackLabel.frame.height/2)
             
             cell.alpha = 0
-            
-            UIView.animate(withDuration: 0.1, delay: 0.3, options: [], animations: {
-                
-                
-                }, completion: nil)
             
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
                 
