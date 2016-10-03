@@ -101,7 +101,6 @@ final class NewGameViewController: UIViewController {
             // show alert
         }
     }
-    
 
 }
 

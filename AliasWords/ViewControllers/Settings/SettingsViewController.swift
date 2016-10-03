@@ -27,6 +27,8 @@ final class SettingsViewController: UIViewController {
     @IBOutlet weak var totalScoreLabel: UICountingLabel!
     @IBOutlet weak var scoreUnderscoreView: UIView!
     
+    @IBOutlet weak var timeLabel: UICountingLabel!
+    @IBOutlet weak var timeSlider: UISlider!
     
     @IBOutlet weak var dictionaryLabel: UILabel!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
@@ -36,6 +38,13 @@ final class SettingsViewController: UIViewController {
     
     var teams: [Team] = []
     var dictionaries: [Dictionary] = []
+    
+    var game: Game {
+        let time = Int(timeSlider.value)
+        let goalScore = Int(scoreSlider.value)
+        
+        return Game(time: time, goalScore: goalScore, teams: teams, dictionary: dictionaries[0])
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +73,26 @@ final class SettingsViewController: UIViewController {
             }, completion: nil)
         
         
+        animateScoreIntro()
+        animateTimeIntro()
+
+    }
+    
+    func animateTimeIntro() {
+        timeLabel.format = "%d"
+        timeLabel.method = .easeInOut
+        timeLabel.count(from: 20, to: 60, withDuration: 0.9)
+        
+        self.timeSlider.value = 20;
+        delay(seconds: 0.15) {
+            UIView.animate(withDuration: 0.7, animations: {
+                self.timeSlider.setValue(60, animated: true)
+            })
+        }
+
+    }
+    
+    func animateScoreIntro() {
         totalScoreLabel.format = "%d"
         totalScoreLabel.method = .easeInOut
         totalScoreLabel.count(from: 60, to: 100, withDuration: 0.9)
@@ -150,7 +179,14 @@ final class SettingsViewController: UIViewController {
     }
     
     // MARK: Action
+    
+    @IBAction func scoreSliderChanged(_ sender: UISlider) {
+        timeLabel.text = String(Int(sender.value))
+    }
 
+    @IBAction func timeSliderChanged(_ sender: UISlider) {
+        timeLabel.text = String(Int(sender.value))
+    }
     @IBAction func swipeToBack(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         
         switch recognizer.state {
