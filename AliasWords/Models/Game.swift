@@ -30,12 +30,16 @@ final class Game {
         return _time
     }
     
-    var newWord: Word {
+    var newWord: String {
+        if (_words.count == 0) {
+            _words = _dictionary.words
+        }
+        
         let randomIndex = randomValue(0, max: _words.count - 1)
         let wordString = _words[randomIndex]
         _words.remove(at: randomIndex)
         
-        return Word(word: wordString)
+        return wordString
     }
     
     init(time: Int, goalScore: Int, teams: [Team], dictionary: Dictionary) {
