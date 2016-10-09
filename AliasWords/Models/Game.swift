@@ -25,10 +25,16 @@ final class Game {
     }
     
     // MARK: Public vars
-    var currentTeamMarkedWords:[(word: String, isCorrect: Bool)] = []
+    
+    var currentTeamMarkedWords:[(word: String, isCorrect: Bool)] = [] {
+        didSet(oldValue) {
+            currentTeam.deltaScoreRound = currentRoundScore
+        }
+    }
     var currentRoundScore: Int {
         return currentCorrectAnswers - currentSkipAnswers
     }
+    
     var currentCorrectAnswers: Int {
         return currentTeamMarkedWords.filter {return $0.isCorrect}.count
     }

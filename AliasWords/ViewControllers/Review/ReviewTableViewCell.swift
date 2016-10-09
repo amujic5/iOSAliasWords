@@ -9,22 +9,20 @@
 import UIKit
 
 final class ReviewTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-    func configure(markedWord: (word: String, isCorrect: Bool)) {
-        titleLabel.text = markedWord.word
-        titleLabel.textColor = markedWord.isCorrect ? UIColor.black : UIColor.red
+    func configure(with team: Team, at position: Int) {
+        teamLabel.text = team.teamName
+        scoreLabel.text = "Score: \(team.score)"
+        positionLabel.text = "\(position)."
     }
     
 }

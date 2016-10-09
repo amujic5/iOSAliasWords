@@ -28,6 +28,10 @@
 		57289B221DA708310096BC9F /* PlayToReviewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B211DA708310096BC9F /* PlayToReviewSegue.swift */; };
 		57289B241DA70AAA0096BC9F /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B231DA70AAA0096BC9F /* ReviewTableViewCell.swift */; };
 		572C87B31DA9730D00B3C08A /* ReviewToPlaySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87B21DA9730D00B3C08A /* ReviewToPlaySegue.swift */; };
+		572C87B91DAA8F4C00B3C08A /* EditAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87B81DAA8F4C00B3C08A /* EditAnswersViewController.swift */; };
+		572C87BB1DAA91E800B3C08A /* EditAnswersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87BA1DAA91E800B3C08A /* EditAnswersTableViewCell.swift */; };
+		572C87BD1DAA98A900B3C08A /* ReviewToEditAnswersSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87BC1DAA98A900B3C08A /* ReviewToEditAnswersSegue.swift */; };
+		572C87BF1DAAE40400B3C08A /* EditAnswersToReviewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87BE1DAAE40400B3C08A /* EditAnswersToReviewSegue.swift */; };
 		573A9B341D8E04990062A911 /* NewGameToSettingsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */; };
 		577414941D909AFB00D0214B /* SettingsToNewGameSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */; };
 		57A778D11D8C5215005CD4AD /* DictionaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778D01D8C5215005CD4AD /* DictionaryCollectionViewCell.swift */; };
@@ -68,6 +72,10 @@
 		57289B211DA708310096BC9F /* PlayToReviewSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayToReviewSegue.swift; sourceTree = "<group>"; };
 		57289B231DA70AAA0096BC9F /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		572C87B21DA9730D00B3C08A /* ReviewToPlaySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewToPlaySegue.swift; sourceTree = "<group>"; };
+		572C87B81DAA8F4C00B3C08A /* EditAnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAnswersViewController.swift; sourceTree = "<group>"; };
+		572C87BA1DAA91E800B3C08A /* EditAnswersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAnswersTableViewCell.swift; sourceTree = "<group>"; };
+		572C87BC1DAA98A900B3C08A /* ReviewToEditAnswersSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewToEditAnswersSegue.swift; sourceTree = "<group>"; };
+		572C87BE1DAAE40400B3C08A /* EditAnswersToReviewSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAnswersToReviewSegue.swift; sourceTree = "<group>"; };
 		573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameToSettingsSegue.swift; sourceTree = "<group>"; };
 		57A778D01D8C5215005CD4AD /* DictionaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		57A778D31D8C5CE5005CD4AD /* HomeToNewGameSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeToNewGameSegue.swift; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 		570148FA1D7A220C000C1551 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				572C87B71DAA8F0200B3C08A /* EditAnswers */,
 				570148FB1D7A2223000C1551 /* HomeViewController.swift */,
 				57289B1E1DA703A70096BC9F /* Review */,
 				5717671D1DA19D9400015BCB /* Play */,
@@ -212,6 +221,15 @@
 			path = Review;
 			sourceTree = "<group>";
 		};
+		572C87B71DAA8F0200B3C08A /* EditAnswers */ = {
+			isa = PBXGroup;
+			children = (
+				572C87B81DAA8F4C00B3C08A /* EditAnswersViewController.swift */,
+				572C87BA1DAA91E800B3C08A /* EditAnswersTableViewCell.swift */,
+			);
+			path = EditAnswers;
+			sourceTree = "<group>";
+		};
 		57A778CF1D8C51FE005CD4AD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +241,8 @@
 		57A778D21D8C5CAE005CD4AD /* Segues */ = {
 			isa = PBXGroup;
 			children = (
+				572C87BC1DAA98A900B3C08A /* ReviewToEditAnswersSegue.swift */,
+				572C87BE1DAAE40400B3C08A /* EditAnswersToReviewSegue.swift */,
 				57289B211DA708310096BC9F /* PlayToReviewSegue.swift */,
 				572C87B21DA9730D00B3C08A /* ReviewToPlaySegue.swift */,
 				571767221DA1B9A900015BCB /* SettingsToPlaySegue.swift */,
@@ -410,8 +430,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572C87BD1DAA98A900B3C08A /* ReviewToEditAnswersSegue.swift in Sources */,
+				572C87BF1DAAE40400B3C08A /* EditAnswersToReviewSegue.swift in Sources */,
 				57A778DD1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift in Sources */,
 				57289B221DA708310096BC9F /* PlayToReviewSegue.swift in Sources */,
+				572C87B91DAA8F4C00B3C08A /* EditAnswersViewController.swift in Sources */,
 				57A778D61D8C9226005CD4AD /* NewGameToHomeSegue.swift in Sources */,
 				57A778DB1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift in Sources */,
 				5717671F1DA19DCB00015BCB /* PlayViewController.swift in Sources */,
@@ -436,6 +459,7 @@
 				57C508EA1D95DE6A00D7DC20 /* DictionaryService.swift in Sources */,
 				577414941D909AFB00D0214B /* SettingsToNewGameSegue.swift in Sources */,
 				57A778D91D8D4BC6005CD4AD /* HowToPlayViewController.swift in Sources */,
+				572C87BB1DAA91E800B3C08A /* EditAnswersTableViewCell.swift in Sources */,
 				571767211DA1AACE00015BCB /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

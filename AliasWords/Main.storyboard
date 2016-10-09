@@ -1131,26 +1131,52 @@ Team that goes through all words in the least amount of time with most points is
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9qW-Z0-gL6">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" id="6vg-b7-lKu" customClass="ReviewTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" rowHeight="72" id="6vg-b7-lKu" customClass="ReviewTableViewCell" customModule="AliasWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vg-b7-lKu" id="iE9-05-EeY">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wld-OG-sEB">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39W-9d-y8j">
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="DNA-LS-x0x"/>
+                                                        <constraint firstAttribute="width" secondItem="39W-9d-y8j" secondAttribute="height" multiplier="1:1" id="LyZ-le-b6p"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek9-IS-0CU">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Eh-zK-Dbc">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Wld-OG-sEB" firstAttribute="leading" secondItem="iE9-05-EeY" secondAttribute="leading" constant="15" id="GN9-ew-zHY"/>
-                                                <constraint firstItem="Wld-OG-sEB" firstAttribute="centerY" secondItem="iE9-05-EeY" secondAttribute="centerY" id="SJX-7f-pzT"/>
+                                                <constraint firstItem="Ek9-IS-0CU" firstAttribute="top" secondItem="iE9-05-EeY" secondAttribute="top" constant="16" id="7VD-Ln-q2j"/>
+                                                <constraint firstItem="39W-9d-y8j" firstAttribute="centerY" secondItem="iE9-05-EeY" secondAttribute="centerY" id="9e3-6B-iz4"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Eh-zK-Dbc" secondAttribute="bottom" constant="15" id="Aah-2T-NEU"/>
+                                                <constraint firstItem="Ek9-IS-0CU" firstAttribute="leading" secondItem="39W-9d-y8j" secondAttribute="trailing" constant="16" id="g4x-cP-MOT"/>
+                                                <constraint firstItem="39W-9d-y8j" firstAttribute="leading" secondItem="iE9-05-EeY" secondAttribute="leading" constant="16" id="mNf-JB-Vub"/>
+                                                <constraint firstItem="8Eh-zK-Dbc" firstAttribute="leading" secondItem="Ek9-IS-0CU" secondAttribute="leading" id="yfE-JD-cbI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="titleLabel" destination="Wld-OG-sEB" id="YPa-ni-ISV"/>
+                                            <outlet property="positionLabel" destination="39W-9d-y8j" id="vL5-KG-LEc"/>
+                                            <outlet property="scoreLabel" destination="8Eh-zK-Dbc" id="NZY-Qc-I1Y"/>
+                                            <outlet property="teamLabel" destination="Ek9-IS-0CU" id="FpN-yH-0Bb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1168,7 +1194,7 @@ Team that goes through all words in the least amount of time with most points is
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-AU-CYo">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THIS ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7r1-lv-dgn">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1187,33 +1213,36 @@ Team that goes through all words in the least amount of time with most points is
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-e0-9pt">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHG-cg-Dls">
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ecw-Ya-JoK"/>
                                         </constraints>
                                         <state key="normal" title="Edit answers"/>
+                                        <connections>
+                                            <segue destination="U5f-Xa-rCd" kind="show" identifier="ReviewToEditAnswersSegue" customClass="ReviewToEditAnswersSegue" customModule="AliasWords" customModuleProvider="target" id="Qwq-vh-UjS"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-e0-9pt">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="P9c-n1-Qh3" firstAttribute="top" secondItem="2tE-e0-9pt" secondAttribute="bottom" constant="5" id="2v5-x3-OXL"/>
                                     <constraint firstItem="QHf-qK-4DT" firstAttribute="centerY" secondItem="Qei-Qw-TPq" secondAttribute="centerY" id="5oM-p3-XEJ"/>
-                                    <constraint firstItem="Qei-Qw-TPq" firstAttribute="top" secondItem="7r1-lv-dgn" secondAttribute="bottom" constant="5" id="JLX-qJ-T2J"/>
                                     <constraint firstItem="7r1-lv-dgn" firstAttribute="leading" secondItem="ebp-AU-CYo" secondAttribute="leading" constant="20" id="MEc-Cw-lYt"/>
                                     <constraint firstItem="P9c-n1-Qh3" firstAttribute="leading" secondItem="QHf-qK-4DT" secondAttribute="trailing" constant="1" id="Nwj-Sz-KhL"/>
                                     <constraint firstItem="Qei-Qw-TPq" firstAttribute="leading" secondItem="7r1-lv-dgn" secondAttribute="leading" id="P82-ay-CKu"/>
-                                    <constraint firstItem="7r1-lv-dgn" firstAttribute="top" secondItem="2tE-e0-9pt" secondAttribute="bottom" constant="13" id="R0q-v6-Pox"/>
                                     <constraint firstItem="P9c-n1-Qh3" firstAttribute="centerY" secondItem="Qei-Qw-TPq" secondAttribute="centerY" id="SMU-A3-96W"/>
                                     <constraint firstItem="DHG-cg-Dls" firstAttribute="centerY" secondItem="P9c-n1-Qh3" secondAttribute="centerY" id="gH7-84-PDd"/>
+                                    <constraint firstItem="7r1-lv-dgn" firstAttribute="top" secondItem="ebp-AU-CYo" secondAttribute="top" constant="14" id="gQN-xf-nqE"/>
                                     <constraint firstItem="QHf-qK-4DT" firstAttribute="leading" secondItem="Qei-Qw-TPq" secondAttribute="trailing" constant="1" id="gwB-MF-sFB"/>
+                                    <constraint firstItem="2tE-e0-9pt" firstAttribute="top" secondItem="7r1-lv-dgn" secondAttribute="bottom" constant="13" id="j4W-dN-wnR"/>
                                     <constraint firstAttribute="bottom" secondItem="Qei-Qw-TPq" secondAttribute="bottom" constant="20" id="k1I-Kx-NjW"/>
                                     <constraint firstItem="2tE-e0-9pt" firstAttribute="leading" secondItem="ebp-AU-CYo" secondAttribute="leading" constant="20" id="ph7-m4-r0D"/>
                                     <constraint firstAttribute="trailing" secondItem="DHG-cg-Dls" secondAttribute="trailing" constant="20" id="rbD-JK-iF6"/>
-                                    <constraint firstItem="2tE-e0-9pt" firstAttribute="top" secondItem="ebp-AU-CYo" secondAttribute="top" constant="14" id="xXQ-sl-JwW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1248,12 +1277,161 @@ Team that goes through all words in the least amount of time with most points is
                         <outlet property="currentTeamCorrectLabel" destination="Qei-Qw-TPq" id="9Gu-IP-sEq"/>
                         <outlet property="currentTeamLabel" destination="2tE-e0-9pt" id="WoD-DH-Nl3"/>
                         <outlet property="currentTeamSkipLabel" destination="P9c-n1-Qh3" id="b9F-AU-GV3"/>
+                        <outlet property="tableView" destination="9qW-Z0-gL6" id="4Qt-vL-Opv"/>
                         <segue destination="lq5-gA-Vcw" kind="show" identifier="ReviewToPlaySegue" customClass="ReviewToPlaySegue" customModule="AliasWords" customModuleProvider="target" id="Xeg-kd-PD5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJO-1u-jnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3104.8000000000002" y="114.69265367316342"/>
+        </scene>
+        <!--Edit Answers View Controller-->
+        <scene sceneID="eah-SN-K1b">
+            <objects>
+                <viewController storyboardIdentifier="EditAnswersViewController" id="U5f-Xa-rCd" customClass="EditAnswersViewController" customModule="AliasWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gK4-hb-avu"/>
+                        <viewControllerLayoutGuide type="bottom" id="qbS-l7-I2H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x4f-Hn-bj9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-5d-nIv">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditAnswersTableViewCell" id="jad-f8-GF9" customClass="EditAnswersTableViewCell" customModule="AliasWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jad-f8-GF9" id="op7-tb-lZx">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-rX-XiC">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="g2c-rX-XiC" firstAttribute="leading" secondItem="op7-tb-lZx" secondAttribute="leading" constant="15" id="CIP-Iy-KN6"/>
+                                                <constraint firstItem="g2c-rX-XiC" firstAttribute="centerY" secondItem="op7-tb-lZx" secondAttribute="centerY" id="zyh-sZ-pHe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="g2c-rX-XiC" id="OIj-b5-CL9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="U5f-Xa-rCd" id="ajF-db-7aX"/>
+                                    <outlet property="delegate" destination="U5f-Xa-rCd" id="c2P-JA-3Ln"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cg-Ye-mhA">
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fug-Gf-DE3">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THIS ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0h-YC-ZEU">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 correct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eF-Gq-nFH">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iil-rJ-rMI">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mG-Vv-TUb">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEi-Ub-O0O">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UEi-Ub-O0O" firstAttribute="top" secondItem="Z0h-YC-ZEU" secondAttribute="bottom" constant="13" id="7ap-9W-1gS"/>
+                                    <constraint firstItem="Iil-rJ-rMI" firstAttribute="centerY" secondItem="7eF-Gq-nFH" secondAttribute="centerY" id="R8u-Zg-tRL"/>
+                                    <constraint firstItem="1mG-Vv-TUb" firstAttribute="centerY" secondItem="7eF-Gq-nFH" secondAttribute="centerY" id="Til-aj-zUc"/>
+                                    <constraint firstAttribute="bottom" secondItem="7eF-Gq-nFH" secondAttribute="bottom" constant="20" id="aNs-EW-S60"/>
+                                    <constraint firstItem="1mG-Vv-TUb" firstAttribute="leading" secondItem="Iil-rJ-rMI" secondAttribute="trailing" constant="1" id="pGQ-4a-dqr"/>
+                                    <constraint firstItem="7eF-Gq-nFH" firstAttribute="leading" secondItem="Z0h-YC-ZEU" secondAttribute="leading" id="qEM-7u-RF4"/>
+                                    <constraint firstItem="UEi-Ub-O0O" firstAttribute="leading" secondItem="fug-Gf-DE3" secondAttribute="leading" constant="20" id="twd-YB-WSH"/>
+                                    <constraint firstItem="1mG-Vv-TUb" firstAttribute="top" secondItem="UEi-Ub-O0O" secondAttribute="bottom" constant="5" id="u9k-eC-QVh"/>
+                                    <constraint firstItem="Z0h-YC-ZEU" firstAttribute="leading" secondItem="fug-Gf-DE3" secondAttribute="leading" constant="20" id="y0A-Xk-qJj"/>
+                                    <constraint firstItem="Iil-rJ-rMI" firstAttribute="leading" secondItem="7eF-Gq-nFH" secondAttribute="trailing" constant="1" id="y96-YV-1On"/>
+                                    <constraint firstItem="Z0h-YC-ZEU" firstAttribute="top" secondItem="fug-Gf-DE3" secondAttribute="top" constant="14" id="ysL-Fv-PEU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkg-4U-27F">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YEq-is-kKg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="qV1-2t-Gga"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="xButtonClicked:" destination="U5f-Xa-rCd" eventType="touchUpInside" id="bAx-Zf-IfR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT ANSWERS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-Te-qSV">
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1fx-Te-qSV" firstAttribute="leading" secondItem="zkg-4U-27F" secondAttribute="trailing" constant="5" id="7Fy-UB-eqN"/>
+                            <constraint firstItem="qbS-l7-I2H" firstAttribute="top" secondItem="1Cg-Ye-mhA" secondAttribute="bottom" id="Dgd-7W-Dns"/>
+                            <constraint firstItem="zkg-4U-27F" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" constant="10" id="INh-Hf-noF"/>
+                            <constraint firstItem="j3G-5d-nIv" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" id="KSj-gB-pqB"/>
+                            <constraint firstAttribute="trailing" secondItem="fug-Gf-DE3" secondAttribute="trailing" id="PLH-fA-bOh"/>
+                            <constraint firstItem="fug-Gf-DE3" firstAttribute="top" secondItem="1fx-Te-qSV" secondAttribute="bottom" constant="8" id="UIu-XA-Ihi"/>
+                            <constraint firstItem="1Cg-Ye-mhA" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" id="XId-V9-9m8"/>
+                            <constraint firstAttribute="trailing" secondItem="j3G-5d-nIv" secondAttribute="trailing" id="XRn-E5-6ou"/>
+                            <constraint firstItem="1Cg-Ye-mhA" firstAttribute="top" secondItem="j3G-5d-nIv" secondAttribute="bottom" id="XUB-jD-uXg"/>
+                            <constraint firstAttribute="trailing" secondItem="1Cg-Ye-mhA" secondAttribute="trailing" id="YcW-v3-J5d"/>
+                            <constraint firstItem="1fx-Te-qSV" firstAttribute="top" secondItem="x4f-Hn-bj9" secondAttribute="top" constant="40" id="Zsb-8O-uOq"/>
+                            <constraint firstItem="j3G-5d-nIv" firstAttribute="top" secondItem="fug-Gf-DE3" secondAttribute="bottom" id="dqf-uO-aEW"/>
+                            <constraint firstItem="fug-Gf-DE3" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" id="gjl-Mf-cE9"/>
+                            <constraint firstItem="zkg-4U-27F" firstAttribute="centerY" secondItem="1fx-Te-qSV" secondAttribute="centerY" id="yf8-TU-gG6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="correctAnswersLabel" destination="7eF-Gq-nFH" id="W3G-68-rMF"/>
+                        <outlet property="skippedAnswersLabel" destination="1mG-Vv-TUb" id="Dse-RO-wmp"/>
+                        <outlet property="teamNameLabel" destination="UEi-Ub-O0O" id="8h9-3Y-DJP"/>
+                        <segue destination="dbr-KI-vRE" kind="show" identifier="EditAnswersToReviewSegue" customClass="EditAnswersToReviewSegue" customModule="AliasWords" customModuleProvider="target" id="Evk-4w-cMk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6i-xJ-BWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4134" y="115"/>
         </scene>
     </scenes>
     <resources>
@@ -1265,5 +1443,6 @@ Team that goes through all words in the least amount of time with most points is
         <segue reference="bcD-cB-P4q"/>
         <segue reference="2Z2-5o-v84"/>
         <segue reference="Xeg-kd-PD5"/>
+        <segue reference="Evk-4w-cMk"/>
     </inferredMetricsTieBreakers>
 </document>

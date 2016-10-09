@@ -13,6 +13,7 @@ final class ReviewViewController: UIViewController {
     @IBOutlet weak var currentTeamLabel: UILabel!
     @IBOutlet weak var currentTeamCorrectLabel: UILabel!
     @IBOutlet weak var currentTeamSkipLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var markedWords:[(word: String, isCorrect: Bool)] {
         return game.currentTeamMarkedWords
@@ -24,6 +25,12 @@ final class ReviewViewController: UIViewController {
         game.currentTeamHasFinishedTheRound()
         _updateViews()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        _updateViews()
     }
     
     private func _updateViews() {
@@ -62,11 +69,10 @@ extension ReviewViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell: ReviewTableViewCell = tableView.dequeueCellAtIndexPath(indexPath)
-        //cell.configure(markedWord: markedWords[indexPath.row])
+        
         let team = game.sortedTeams[indexPath.row]
-        cell.titleLabel.text = "\(team.teamName): \(team.score)"
+        cell.configure(with: team, at: indexPath.row + 1)
         
         return cell
     }
@@ -80,5 +86,13 @@ extension ReviewViewController: UITableViewDataSource {
 // MARK: UITableViewDelegate
 
 extension ReviewViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
+    }
     
 }
