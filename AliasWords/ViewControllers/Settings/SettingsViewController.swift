@@ -27,6 +27,7 @@ final class SettingsViewController: UIViewController {
     @IBOutlet weak var totalScoreLabel: UICountingLabel!
     @IBOutlet weak var scoreUnderscoreView: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var timeLabel: UICountingLabel!
     @IBOutlet weak var timeSlider: UISlider!
     
@@ -138,7 +139,7 @@ final class SettingsViewController: UIViewController {
     func animateCollectionView() {
         collectionView.reloadDataWithCompletion {
             for (index, view) in self.collectionView.visibleCells.enumerated() {
-                view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7) 
                 view.alpha = 0
                 UIView.animate(withDuration: 0.7, delay: 0.25 + Double(index) * 0.03, usingSpringWithDamping: 0.45, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
                     view.transform = CGAffineTransform.identity
@@ -181,7 +182,7 @@ final class SettingsViewController: UIViewController {
     // MARK: Action
     
     @IBAction func scoreSliderChanged(_ sender: UISlider) {
-        timeLabel.text = String(Int(sender.value))
+        totalScoreLabel.text = String(Int(sender.value))
     }
 
     @IBAction func timeSliderChanged(_ sender: UISlider) {

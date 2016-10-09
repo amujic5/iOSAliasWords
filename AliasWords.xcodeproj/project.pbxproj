@@ -24,6 +24,10 @@
 		5717671F1DA19DCB00015BCB /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717671E1DA19DCB00015BCB /* PlayViewController.swift */; };
 		571767211DA1AACE00015BCB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571767201DA1AACE00015BCB /* Game.swift */; };
 		571767231DA1B9A900015BCB /* SettingsToPlaySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571767221DA1B9A900015BCB /* SettingsToPlaySegue.swift */; };
+		57289B201DA703BE0096BC9F /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B1F1DA703BE0096BC9F /* ReviewViewController.swift */; };
+		57289B221DA708310096BC9F /* PlayToReviewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B211DA708310096BC9F /* PlayToReviewSegue.swift */; };
+		57289B241DA70AAA0096BC9F /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B231DA70AAA0096BC9F /* ReviewTableViewCell.swift */; };
+		572C87B31DA9730D00B3C08A /* ReviewToPlaySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C87B21DA9730D00B3C08A /* ReviewToPlaySegue.swift */; };
 		573A9B341D8E04990062A911 /* NewGameToSettingsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */; };
 		577414941D909AFB00D0214B /* SettingsToNewGameSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */; };
 		57A778D11D8C5215005CD4AD /* DictionaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A778D01D8C5215005CD4AD /* DictionaryCollectionViewCell.swift */; };
@@ -60,6 +64,10 @@
 		571767201DA1AACE00015BCB /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		571767221DA1B9A900015BCB /* SettingsToPlaySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsToPlaySegue.swift; sourceTree = "<group>"; };
 		57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsToNewGameSegue.swift; sourceTree = "<group>"; };
+		57289B1F1DA703BE0096BC9F /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		57289B211DA708310096BC9F /* PlayToReviewSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayToReviewSegue.swift; sourceTree = "<group>"; };
+		57289B231DA70AAA0096BC9F /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		572C87B21DA9730D00B3C08A /* ReviewToPlaySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewToPlaySegue.swift; sourceTree = "<group>"; };
 		573A9B331D8E04990062A911 /* NewGameToSettingsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameToSettingsSegue.swift; sourceTree = "<group>"; };
 		57A778D01D8C5215005CD4AD /* DictionaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		57A778D31D8C5CE5005CD4AD /* HomeToNewGameSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeToNewGameSegue.swift; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				570148FB1D7A2223000C1551 /* HomeViewController.swift */,
+				57289B1E1DA703A70096BC9F /* Review */,
 				5717671D1DA19D9400015BCB /* Play */,
 				57A778D71D8D4B91005CD4AD /* HowToPlay */,
 				57B0C4D51D88A5400024CD07 /* Settings */,
@@ -194,6 +203,15 @@
 			path = Play;
 			sourceTree = "<group>";
 		};
+		57289B1E1DA703A70096BC9F /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				57289B1F1DA703BE0096BC9F /* ReviewViewController.swift */,
+				57289B231DA70AAA0096BC9F /* ReviewTableViewCell.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		57A778CF1D8C51FE005CD4AD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +223,8 @@
 		57A778D21D8C5CAE005CD4AD /* Segues */ = {
 			isa = PBXGroup;
 			children = (
+				57289B211DA708310096BC9F /* PlayToReviewSegue.swift */,
+				572C87B21DA9730D00B3C08A /* ReviewToPlaySegue.swift */,
 				571767221DA1B9A900015BCB /* SettingsToPlaySegue.swift */,
 				57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */,
 				57A778D51D8C9226005CD4AD /* NewGameToHomeSegue.swift */,
@@ -391,19 +411,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A778DD1D8D5C56005CD4AD /* HowToPlayToHomeSegue.swift in Sources */,
+				57289B221DA708310096BC9F /* PlayToReviewSegue.swift in Sources */,
 				57A778D61D8C9226005CD4AD /* NewGameToHomeSegue.swift in Sources */,
 				57A778DB1D8D4BEB005CD4AD /* HomeToHowToPlaySegue.swift in Sources */,
 				5717671F1DA19DCB00015BCB /* PlayViewController.swift in Sources */,
 				5702CD061D80C16E007405E6 /* CellMagic.swift in Sources */,
 				57B0C4D71D88A5510024CD07 /* SettingsViewController.swift in Sources */,
 				570148E51D7A1F8A000C1551 /* AppDelegate.swift in Sources */,
+				572C87B31DA9730D00B3C08A /* ReviewToPlaySegue.swift in Sources */,
 				5702CD091D80C5A2007405E6 /* AddEditTeamView.swift in Sources */,
+				57289B241DA70AAA0096BC9F /* ReviewTableViewCell.swift in Sources */,
 				5702CD021D80C0F3007405E6 /* NewGameViewController.swift in Sources */,
 				57A778D41D8C5CE5005CD4AD /* HomeToNewGameSegue.swift in Sources */,
 				573A9B341D8E04990062A911 /* NewGameToSettingsSegue.swift in Sources */,
 				571767231DA1B9A900015BCB /* SettingsToPlaySegue.swift in Sources */,
 				57C508EC1D95DF1000D7DC20 /* Dictionary.swift in Sources */,
 				57A778D11D8C5215005CD4AD /* DictionaryCollectionViewCell.swift in Sources */,
+				57289B201DA703BE0096BC9F /* ReviewViewController.swift in Sources */,
 				570148FF1D7A24FD000C1551 /* UIView.swift in Sources */,
 				5702CD041D80C128007405E6 /* NewGameTableViewCell.swift in Sources */,
 				570149061D7A2C0C000C1551 /* Team.swift in Sources */,

@@ -27,10 +27,19 @@ final class PlayViewController: UIViewController {
     @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var bannerView: GADBannerView!
    
+    
+    @IBOutlet weak var answeringPlayerLabel: UILabel!
+    @IBOutlet weak var explainingPlayerLabel: UILabel!
+    @IBOutlet weak var dialogParenView: UIView!
+    @IBOutlet weak var buttonsContainerView: UIView!
+    @IBOutlet weak var dialogView: UIView!
+    @IBOutlet weak var stateLabel: UILabel! //first Up, playing, next
+    @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var extendedHeaderView: UIView!
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pauseResumeButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var teamLabelTopConstraint: NSLayoutConstraint! //43, 20
     
     private var _playState: PlayState = .pause
     var skipCounter: Int = 0
@@ -41,6 +50,9 @@ final class PlayViewController: UIViewController {
         }
     }
     
+    var markedWords:[(word: String, isCorrect: Bool)] {
+        return game.currentTeamMarkedWords
+    }
     var game: Game!
     var timer: Timer?
     
@@ -49,9 +61,12 @@ final class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        stateLabel.text = "Next"
         wordLabel.alpha = 0
+        stopButton.alpha = 0
         loadBannerView()
         time = game.time
+        _updateViews()
         registerForNotifications()
         
     }
@@ -67,6 +82,13 @@ final class PlayViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "UIApplicationDidEnterBackgroundNotification"), object: nil, queue: nil) { (_) in
             self._pause()
         }
+    }
+    
+    private func _updateViews() {
+        teamNameLabel.text = game.currentTeam.teamName
+        wordLabel.text = game.newWord
+        explainingPlayerLabel.text = game.explainingPlayerName
+        answeringPlayerLabel.text = game.answeringPlayerName
     }
     
     private func loadBannerView() {
@@ -86,6 +108,7 @@ final class PlayViewController: UIViewController {
                 self.time -= 1
                 if self.time == 0 {
                     timer.invalidate()
+                    self.performSegue(withIdentifier: "PlayToReviewSegue", sender: nil)
                 }
             }
             
@@ -114,19 +137,26 @@ final class PlayViewController: UIViewController {
         self.timer?.invalidate()
         self.animator?.pauseAnimation()
         
-        headerViewHeightConstraint.constant = 150
+        headerViewHeightConstraint.constant = 170
+        teamLabelTopConstraint.constant = 43
         
         UIView.transition(with: pauseButton, duration: 0.15, options: .transitionCrossDissolve, animations: {
-            self.pauseButton.setTitle("Resume", for: .normal)
+            self.pauseButton.setTitle(nil, for: .normal)
+            self.pauseButton.backgroundColor = UIColor.clear
+            self.pauseButton.setImage(UIImage(named: "play_button"), for: .normal)
         }) { (_) in
         }
+        
+        UIView.transition(with: stateLabel, duration: 0.15, options: .transitionCrossDissolve, animations: { 
+            self.stateLabel.text = "Playing"
+            }, completion: nil)
         
         UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 0.55, initialSpringVelocity: 0.3, options: [], animations: {
             self.overlayView.alpha = 1
             self.extendedHeaderView.alpha = 1
             self.wordLabel.alpha = 0
             self.view.layoutIfNeeded()
-
+            self.stopButton.alpha = 1
             }, completion: nil)
 
     }
@@ -135,31 +165,41 @@ final class PlayViewController: UIViewController {
         _playState = .playing
         
         pauseResumeButtonWidthConstraint.constant = 40
-        headerViewHeightConstraint.constant = 75
+        headerViewHeightConstraint.constant = 80
+        teamLabelTopConstraint.constant = 20
         
         self.startTimer()
         UIView.transition(with: pauseButton, duration: 0.15, options: .transitionCrossDissolve, animations: {
             
-            self.pauseButton.setTitle("||", for: .normal)
-            self.pauseButton.setTitleColor(UIColor.black, for: .normal)
+            self.pauseButton.setTitle(nil, for: .normal)
             self.pauseButton.backgroundColor = UIColor.clear
-            //self.pauseButton.setImage(UIImage(named: "ic_check_box_selected"), for: .normal)
+            self.pauseButton.setImage(UIImage(named: "pause_button"), for: .normal)
         }) { (_) in
         }
+        
+        UIView.transition(with: stateLabel, duration: 0.15, options: .transitionCrossDissolve, animations: {
+            self.stateLabel.text = nil
+            }, completion: nil)
         
         UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 0.55, initialSpringVelocity: 0.8, options: [], animations: {
             self.overlayView.alpha = 0
             self.extendedHeaderView.alpha = 0
             self.wordLabel.alpha = 1
             self.view.layoutIfNeeded()
+            self.stopButton.alpha = 0
             }, completion: nil)
     }
     
     // MARK: Action
     
+    @IBAction func stopButtonClicked(_ sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func skipButtonClicked(_ sender: UIButton) {
         skipCounter += 1
         skippedLabel.text = "\(skipCounter) skipped"
+        game.addMarkedWord((wordLabel.text!,false))
         newWordLabel()
     }
     
@@ -167,6 +207,7 @@ final class PlayViewController: UIViewController {
     @IBAction func correctButtonClicked(_ sender: UIButton) {
         correctCounter += 1
         correctLabel.text = "\(correctCounter) correct"
+        game.addMarkedWord((wordLabel.text!,true))
         newWordLabel()
     }
     
