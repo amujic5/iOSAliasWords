@@ -39,17 +39,17 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALIAS WORDS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bT-3n-UQN">
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="64"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-oW-k81">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kS8-Ae-mDF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                 <state key="normal" title="TELL YOUR FRIENDS!">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -58,13 +58,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uI-cJ-Sgx">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9j1-dZ-CSf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                 <state key="normal" title="HOW TO PLAY?">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -76,13 +76,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-9i-1Wb">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Bko-PF-oqG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                 <state key="normal" title="NEW GAME">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -94,7 +94,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.24705882352941178" green="0.74117647058823533" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yBr-Sn-WH9" firstAttribute="top" secondItem="hj9-oW-k81" secondAttribute="bottom" constant="20" id="5ja-Qv-2o2"/>
                             <constraint firstItem="2bT-3n-UQN" firstAttribute="leading" secondItem="SLt-th-3gE" secondAttribute="leading" constant="20" id="9bW-18-ij6"/>
@@ -228,6 +228,7 @@ Team that goes through all words in the least amount of time with most points is
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="7gq-FS-gvs"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="G7j-3Q-fTW"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="back_button"/>
                                 <connections>
                                     <segue destination="Hw0-qb-o80" kind="custom" customClass="NewGameToHomeSegue" customModule="AliasWords" customModuleProvider="target" id="bcD-cB-P4q"/>
@@ -235,12 +236,12 @@ Team that goes through all words in the least amount of time with most points is
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW GAME" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kem-cw-6tR">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-5o-pYj">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-i3-1XS">
@@ -253,19 +254,21 @@ Team that goes through all words in the least amount of time with most points is
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9y-5P-Rgn">
+                                                    <color key="backgroundColor" red="0.396078431372549" green="0.792156862745098" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="T3l-3F-OMS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="  CREATE TEAM" image="ic_create_team">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
@@ -273,7 +276,7 @@ Team that goes through all words in the least amount of time with most points is
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Q9y-5P-Rgn" secondAttribute="trailing" id="9jv-fh-Ed7"/>
                                                 <constraint firstItem="Q9y-5P-Rgn" firstAttribute="top" secondItem="osP-80-oEU" secondAttribute="top" constant="11" id="QCu-4Z-bpc"/>
@@ -289,13 +292,13 @@ Team that goes through all words in the least amount of time with most points is
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disco Tits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7C-5D-bHt">
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBu-v4-yDa">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gd8-yj-pNz">
@@ -303,17 +306,19 @@ Team that goes through all words in the least amount of time with most points is
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6gc-5a-qmF"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="kbY-L9-bpE"/>
                                                             </constraints>
+                                                            <color key="tintColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="ic_check_box"/>
                                                             <connections>
                                                                 <action selector="checkboxButtonClicked:" destination="5wx-oC-qxX" eventType="touchUpInside" id="MOk-Xu-3vB"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf8-8e-d7a">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="iBu-v4-yDa" firstAttribute="leading" secondItem="A7C-5D-bHt" secondAttribute="trailing" constant="52" id="1pT-uv-Az0"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gd8-yj-pNz" secondAttribute="trailing" constant="15" id="2Wz-Bs-U6o"/>
@@ -345,7 +350,7 @@ Team that goes through all words in the least amount of time with most points is
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="n1s-hi-VHN" firstAttribute="top" secondItem="0Ke-i3-1XS" secondAttribute="top" id="Ijm-lL-vyk"/>
                                     <constraint firstAttribute="trailing" secondItem="n1s-hi-VHN" secondAttribute="trailing" constant="20" id="LYy-1E-w3w"/>
@@ -356,11 +361,11 @@ Team that goes through all words in the least amount of time with most points is
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="191-OW-LmD">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oL-2Y-T8o">
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.82745098039215681" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="0F0-6Y-iwm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                         <state key="normal" title="START THE GAME">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -374,8 +379,8 @@ Team that goes through all words in the least amount of time with most points is
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redneck One VS Redneck One VS Redneck One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rma-nV-N5D">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -402,7 +407,7 @@ Team that goes through all words in the least amount of time with most points is
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2470588235" green="0.74117647060000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kjM-5o-pYj" firstAttribute="leading" secondItem="xTk-Tk-NXK" secondAttribute="leading" constant="20" id="1B0-Ld-3we"/>
@@ -459,7 +464,7 @@ Team that goes through all words in the least amount of time with most points is
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHh-QB-0K9">
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg9-yH-UBL">
@@ -467,6 +472,7 @@ Team that goes through all words in the least amount of time with most points is
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="FzZ-ay-itT"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="epb-Ga-8ui"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="back_button"/>
                                 <connections>
                                     <segue destination="m9O-KQ-X0I" kind="custom" customClass="SettingsToNewGameSegue" customModule="AliasWords" customModuleProvider="target" id="2Z2-5o-v84"/>
@@ -489,8 +495,8 @@ Team that goes through all words in the least amount of time with most points is
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLT-iq-TUA">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oae-yQ-RQU">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                                        <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -518,28 +524,30 @@ Team that goes through all words in the least amount of time with most points is
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3r-SX-op8">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHi-Nd-7Ra">
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-3R-jYj">
+                                                        <color key="minimumTrackTintColor" red="0.9137254901960784" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="maximumTrackTintColor" red="0.53333333333333333" green="0.84313725490196079" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="scoreSliderChanged:" destination="8BQ-1d-G11" eventType="valueChanged" id="yRO-z2-zqr"/>
                                                         </connections>
                                                     </slider>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsF-dH-bLj">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsF-dH-bLj">
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWK-iJ-388">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWK-iJ-388">
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-PM-pRV" customClass="UICountingLabel">
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ge2-tx-GWC">
@@ -554,7 +562,7 @@ Team that goes through all words in the least amount of time with most points is
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="FHi-Nd-7Ra" firstAttribute="top" secondItem="X3r-SX-op8" secondAttribute="top" constant="25" id="1Ev-L6-w4j"/>
                                                     <constraint firstItem="Ihj-PM-pRV" firstAttribute="top" secondItem="X3r-SX-op8" secondAttribute="top" constant="22" id="3eq-7a-iRH"/>
@@ -576,28 +584,30 @@ Team that goes through all words in the least amount of time with most points is
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2MK-2u-4gt">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME LIMIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-zm-tdY">
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="5" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="Kpu-fG-Xsg">
+                                                        <color key="minimumTrackTintColor" red="0.91372549020000005" green="0.96078431369999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="maximumTrackTintColor" red="0.53333333329999999" green="0.84313725490000002" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="timeSliderChanged:" destination="8BQ-1d-G11" eventType="valueChanged" id="687-sk-bZi"/>
                                                         </connections>
                                                     </slider>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLQ-NF-GVl">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLQ-NF-GVl">
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0s-gM-mbJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0s-gM-mbJ">
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-Wc-Tbo" customClass="UICountingLabel">
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maE-la-TSJ">
@@ -617,7 +627,7 @@ Team that goes through all words in the least amount of time with most points is
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="y0s-gM-mbJ" secondAttribute="trailing" constant="20" id="96J-cW-kjX"/>
                                                     <constraint firstItem="Kpu-fG-Xsg" firstAttribute="leading" secondItem="fLQ-NF-GVl" secondAttribute="trailing" constant="8" id="B4i-ND-V9B"/>
@@ -641,17 +651,17 @@ Team that goes through all words in the least amount of time with most points is
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixk-b9-hxc">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICTIONARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h45-SC-PCm">
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENGLISH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeW-Kp-tNm">
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m0h-Em-rpl">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="125" id="hpw-GY-ioy"/>
                                                         </constraints>
@@ -695,7 +705,7 @@ Team that goes through all words in the least amount of time with most points is
                                                         </connections>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="m0h-Em-rpl" firstAttribute="leading" secondItem="ixk-b9-hxc" secondAttribute="leading" id="5cu-O9-RcJ"/>
                                                     <constraint firstItem="m0h-Em-rpl" firstAttribute="top" secondItem="h45-SC-PCm" secondAttribute="bottom" constant="8" id="KBb-8A-gWk"/>
@@ -708,7 +718,7 @@ Team that goes through all words in the least amount of time with most points is
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="RLT-iq-TUA" firstAttribute="leading" secondItem="zLh-dV-jOA" secondAttribute="trailing" constant="10" id="2Ym-BK-XfN"/>
                                             <constraint firstItem="MKT-al-g5W" firstAttribute="leading" secondItem="RLT-iq-TUA" secondAttribute="trailing" constant="10" id="4DQ-C4-4JW"/>
@@ -732,6 +742,7 @@ Team that goes through all words in the least amount of time with most points is
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="wNb-B7-572" firstAttribute="leading" secondItem="OnF-Zr-gGy" secondAttribute="leading" id="3K9-HL-wew"/>
                                     <constraint firstItem="wNb-B7-572" firstAttribute="width" secondItem="OnF-Zr-gGy" secondAttribute="width" id="5hj-Q6-36V"/>
@@ -741,11 +752,11 @@ Team that goes through all words in the least amount of time with most points is
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-SP-VpH">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="moL-ZL-6Wg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                 <state key="normal" title="PLAY">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -760,7 +771,7 @@ Team that goes through all words in the least amount of time with most points is
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2470588235" green="0.74117647060000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nHh-QB-0K9" firstAttribute="centerY" secondItem="Cg9-yH-UBL" secondAttribute="centerY" id="0DJ-uv-4Cp"/>
@@ -839,30 +850,41 @@ Team that goes through all words in the least amount of time with most points is
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpm-Tb-0Ir">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvt-nY-B3a">
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SKIP">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="skipButtonClicked:" destination="lq5-gA-Vcw" eventType="touchUpInside" id="cCt-55-OKQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWw-aM-cft">
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" red="0.40392156862745099" green="0.8784313725490196" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="CORRECT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="correctButtonClicked:" destination="lq5-gA-Vcw" eventType="touchUpInside" id="udc-pG-Txw"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="VWw-aM-cft" secondAttribute="trailing" id="3qV-s8-evs"/>
                                     <constraint firstAttribute="height" constant="70" id="Fef-hk-Fdy"/>
                                     <constraint firstItem="xvt-nY-B3a" firstAttribute="leading" secondItem="mpm-Tb-0Ir" secondAttribute="leading" id="Guk-HB-sM1"/>
                                     <constraint firstAttribute="bottom" secondItem="VWw-aM-cft" secondAttribute="bottom" id="HQd-CB-6Xu"/>
-                                    <constraint firstItem="VWw-aM-cft" firstAttribute="leading" secondItem="xvt-nY-B3a" secondAttribute="trailing" id="SlT-3o-Mxg"/>
+                                    <constraint firstItem="VWw-aM-cft" firstAttribute="leading" secondItem="xvt-nY-B3a" secondAttribute="trailing" constant="16" id="SlT-3o-Mxg"/>
                                     <constraint firstAttribute="bottom" secondItem="xvt-nY-B3a" secondAttribute="bottom" id="j7W-cz-X3A"/>
                                     <constraint firstItem="xvt-nY-B3a" firstAttribute="width" secondItem="VWw-aM-cft" secondAttribute="width" id="mrG-nc-qld"/>
                                     <constraint firstItem="xvt-nY-B3a" firstAttribute="top" secondItem="mpm-Tb-0Ir" secondAttribute="top" id="qxr-iP-HdE"/>
@@ -873,7 +895,7 @@ Team that goes through all words in the least amount of time with most points is
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
@@ -881,13 +903,13 @@ Team that goes through all words in the least amount of time with most points is
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0VL-T7-wZX">
-                                <fontDescription key="fontDescription" type="system" pointSize="250"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="250"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xe-FZ-3yw">
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xe-FZ-3yw">
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
+                                <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kj2-SX-9bn">
@@ -898,22 +920,22 @@ Team that goes through all words in the least amount of time with most points is
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpQ-kf-4Fx">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kw8-Hu-0lt">
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 correct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYY-wI-pK4">
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLE-NY-a95">
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68u-iD-p5g">
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -922,13 +944,13 @@ Team that goes through all words in the least amount of time with most points is
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xS-wU-aJd">
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" text="EXPLAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TW-eL-cHe">
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                                <color key="textColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-h6-hy2">
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                                <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -944,13 +966,13 @@ Team that goes through all words in the least amount of time with most points is
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axf-Kx-9rp">
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" text="ANSWERING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9f-7d-Ncu">
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                                <color key="textColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nessa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98a-i4-eRH">
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                                <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -977,12 +999,12 @@ Team that goes through all words in the least amount of time with most points is
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMX-iz-OU0">
-                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="P0U-z4-ib1"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="lEh-Zp-bUI"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                                 <state key="normal" title="Start">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -996,17 +1018,17 @@ Team that goes through all words in the least amount of time with most points is
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-12-74T">
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                 <state key="normal" title="STOP">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="stopButtonClicked:" destination="lq5-gA-Vcw" eventType="touchUpInside" id="VBQ-VE-e2h"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-Fl-XKT">
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1125,14 +1147,14 @@ Team that goes through all words in the least amount of time with most points is
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZF-cJ-Gh4">
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9qW-Z0-gL6">
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" rowHeight="72" id="6vg-b7-lKu" customClass="ReviewTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="72"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vg-b7-lKu" id="iE9-05-EeY">
                                             <frame key="frameInset" width="375" height="71.5"/>
@@ -1154,12 +1176,12 @@ Team that goes through all words in the least amount of time with most points is
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek9-IS-0CU">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Eh-zK-Dbc">
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1194,12 +1216,12 @@ Team that goes through all words in the least amount of time with most points is
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-AU-CYo">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THIS ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7r1-lv-dgn">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                        <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 correct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qei-Qw-TPq">
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1209,7 +1231,7 @@ Team that goes through all words in the least amount of time with most points is
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9c-n1-Qh3">
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1217,18 +1239,21 @@ Team that goes through all words in the least amount of time with most points is
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ecw-Ya-JoK"/>
                                         </constraints>
-                                        <state key="normal" title="Edit answers"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                        <state key="normal" title="Edit answers">
+                                            <color key="titleColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="U5f-Xa-rCd" kind="show" identifier="ReviewToEditAnswersSegue" customClass="ReviewToEditAnswersSegue" customModule="AliasWords" customModuleProvider="target" id="Qwq-vh-UjS"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-e0-9pt">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="P9c-n1-Qh3" firstAttribute="top" secondItem="2tE-e0-9pt" secondAttribute="bottom" constant="5" id="2v5-x3-OXL"/>
                                     <constraint firstItem="QHf-qK-4DT" firstAttribute="centerY" secondItem="Qei-Qw-TPq" secondAttribute="centerY" id="5oM-p3-XEJ"/>
@@ -1257,7 +1282,7 @@ Team that goes through all words in the least amount of time with most points is
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2470588235" green="0.74117647060000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ebp-AU-CYo" firstAttribute="leading" secondItem="8OC-hD-vOj" secondAttribute="leading" id="Bg3-js-i6q"/>
                             <constraint firstItem="AS8-5p-uyq" firstAttribute="top" secondItem="8Or-p3-dfK" secondAttribute="bottom" id="JOf-EQ-4EG"/>
@@ -1297,28 +1322,36 @@ Team that goes through all words in the least amount of time with most points is
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-5d-nIv">
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-5d-nIv">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditAnswersTableViewCell" id="jad-f8-GF9" customClass="EditAnswersTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditAnswersTableViewCell" rowHeight="56" id="jad-f8-GF9" customClass="EditAnswersTableViewCell" customModule="AliasWords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jad-f8-GF9" id="op7-tb-lZx">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-rX-XiC">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCH-Ho-pem">
+                                                    <connections>
+                                                        <action selector="switcherChangedValue:" destination="jad-f8-GF9" eventType="valueChanged" id="qSQ-sZ-bet"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="g2c-rX-XiC" firstAttribute="leading" secondItem="op7-tb-lZx" secondAttribute="leading" constant="15" id="CIP-Iy-KN6"/>
+                                                <constraint firstItem="uCH-Ho-pem" firstAttribute="centerY" secondItem="op7-tb-lZx" secondAttribute="centerY" id="Iqp-rU-6cS"/>
+                                                <constraint firstAttribute="trailing" secondItem="uCH-Ho-pem" secondAttribute="trailing" constant="20" id="mCj-6a-Ao7"/>
                                                 <constraint firstItem="g2c-rX-XiC" firstAttribute="centerY" secondItem="op7-tb-lZx" secondAttribute="centerY" id="zyh-sZ-pHe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="correctSwitch" destination="uCH-Ho-pem" id="TrI-sn-HSN"/>
                                             <outlet property="titleLabel" destination="g2c-rX-XiC" id="OIj-b5-CL9"/>
                                         </connections>
                                     </tableViewCell>
@@ -1328,18 +1361,15 @@ Team that goes through all words in the least amount of time with most points is
                                     <outlet property="delegate" destination="U5f-Xa-rCd" id="c2P-JA-3Ln"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cg-Ye-mhA">
-                                <state key="normal" title="Button"/>
-                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fug-Gf-DE3">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THIS ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0h-YC-ZEU">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                        <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 correct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eF-Gq-nFH">
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1349,17 +1379,17 @@ Team that goes through all words in the least amount of time with most points is
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mG-Vv-TUb">
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEi-Ub-O0O">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="UEi-Ub-O0O" firstAttribute="top" secondItem="Z0h-YC-ZEU" secondAttribute="bottom" constant="13" id="7ap-9W-1gS"/>
                                     <constraint firstItem="Iil-rJ-rMI" firstAttribute="centerY" secondItem="7eF-Gq-nFH" secondAttribute="centerY" id="R8u-Zg-tRL"/>
@@ -1392,7 +1422,7 @@ Team that goes through all words in the least amount of time with most points is
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
                                 <state key="normal" title="X">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="xButtonClicked:" destination="U5f-Xa-rCd" eventType="touchUpInside" id="bAx-Zf-IfR"/>
@@ -1400,31 +1430,89 @@ Team that goes through all words in the least amount of time with most points is
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT ANSWERS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-Te-qSV">
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tuf-fg-Y7d">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cg-Ye-mhA">
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                        <state key="normal" title="SAVE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveButtonClicked:" destination="U5f-Xa-rCd" eventType="touchUpInside" id="CqP-sT-blh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqW-tX-jcV">
+                                        <color key="backgroundColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                        <state key="normal" title="CANCEL">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="U5f-Xa-rCd" eventType="touchUpInside" id="VFH-hR-AKZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="2Jl-oU-Ox5"/>
+                                    <constraint firstItem="1Cg-Ye-mhA" firstAttribute="top" secondItem="Tuf-fg-Y7d" secondAttribute="top" constant="16" id="J6X-gi-q0t"/>
+                                    <constraint firstItem="1Cg-Ye-mhA" firstAttribute="width" secondItem="hqW-tX-jcV" secondAttribute="width" id="LBn-o9-cyr"/>
+                                    <constraint firstItem="1Cg-Ye-mhA" firstAttribute="leading" secondItem="hqW-tX-jcV" secondAttribute="trailing" constant="16" id="Ojg-VU-YEV"/>
+                                    <constraint firstItem="hqW-tX-jcV" firstAttribute="leading" secondItem="Tuf-fg-Y7d" secondAttribute="leading" constant="16" id="PHO-4m-h9e"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Cg-Ye-mhA" secondAttribute="bottom" constant="16" id="RCS-w8-uKn"/>
+                                    <constraint firstAttribute="bottom" secondItem="hqW-tX-jcV" secondAttribute="bottom" constant="16" id="UdM-Hh-Dis"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Cg-Ye-mhA" secondAttribute="trailing" constant="16" id="XdV-um-Ud2"/>
+                                    <constraint firstItem="hqW-tX-jcV" firstAttribute="top" secondItem="Tuf-fg-Y7d" secondAttribute="top" constant="16" id="aNp-bN-6QL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.37915558510000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2470588235" green="0.74117647060000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Tuf-fg-Y7d" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" constant="9" id="1m3-Eh-1d8"/>
                             <constraint firstItem="1fx-Te-qSV" firstAttribute="leading" secondItem="zkg-4U-27F" secondAttribute="trailing" constant="5" id="7Fy-UB-eqN"/>
-                            <constraint firstItem="qbS-l7-I2H" firstAttribute="top" secondItem="1Cg-Ye-mhA" secondAttribute="bottom" id="Dgd-7W-Dns"/>
                             <constraint firstItem="zkg-4U-27F" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" constant="10" id="INh-Hf-noF"/>
                             <constraint firstItem="j3G-5d-nIv" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" id="KSj-gB-pqB"/>
                             <constraint firstAttribute="trailing" secondItem="fug-Gf-DE3" secondAttribute="trailing" id="PLH-fA-bOh"/>
                             <constraint firstItem="fug-Gf-DE3" firstAttribute="top" secondItem="1fx-Te-qSV" secondAttribute="bottom" constant="8" id="UIu-XA-Ihi"/>
-                            <constraint firstItem="1Cg-Ye-mhA" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" id="XId-V9-9m8"/>
                             <constraint firstAttribute="trailing" secondItem="j3G-5d-nIv" secondAttribute="trailing" id="XRn-E5-6ou"/>
-                            <constraint firstItem="1Cg-Ye-mhA" firstAttribute="top" secondItem="j3G-5d-nIv" secondAttribute="bottom" id="XUB-jD-uXg"/>
-                            <constraint firstAttribute="trailing" secondItem="1Cg-Ye-mhA" secondAttribute="trailing" id="YcW-v3-J5d"/>
                             <constraint firstItem="1fx-Te-qSV" firstAttribute="top" secondItem="x4f-Hn-bj9" secondAttribute="top" constant="40" id="Zsb-8O-uOq"/>
                             <constraint firstItem="j3G-5d-nIv" firstAttribute="top" secondItem="fug-Gf-DE3" secondAttribute="bottom" id="dqf-uO-aEW"/>
                             <constraint firstItem="fug-Gf-DE3" firstAttribute="leading" secondItem="x4f-Hn-bj9" secondAttribute="leading" id="gjl-Mf-cE9"/>
+                            <constraint firstItem="qbS-l7-I2H" firstAttribute="top" secondItem="j3G-5d-nIv" secondAttribute="bottom" id="hBK-Z8-wpz"/>
+                            <constraint firstAttribute="trailing" secondItem="Tuf-fg-Y7d" secondAttribute="trailing" constant="9" id="qy1-rw-TV8"/>
+                            <constraint firstAttribute="bottom" secondItem="Tuf-fg-Y7d" secondAttribute="bottom" constant="9" id="vrn-SK-IbJ"/>
                             <constraint firstItem="zkg-4U-27F" firstAttribute="centerY" secondItem="1fx-Te-qSV" secondAttribute="centerY" id="yf8-TU-gG6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="correctAnswersLabel" destination="7eF-Gq-nFH" id="W3G-68-rMF"/>
                         <outlet property="skippedAnswersLabel" destination="1mG-Vv-TUb" id="Dse-RO-wmp"/>
+                        <outlet property="tableView" destination="j3G-5d-nIv" id="XgA-rO-4Cy"/>
                         <outlet property="teamNameLabel" destination="UEi-Ub-O0O" id="8h9-3Y-DJP"/>
                         <segue destination="dbr-KI-vRE" kind="show" identifier="EditAnswersToReviewSegue" customClass="EditAnswersToReviewSegue" customModule="AliasWords" customModuleProvider="target" id="Evk-4w-cMk"/>
                     </connections>
@@ -1436,13 +1524,13 @@ Team that goes through all words in the least amount of time with most points is
     </scenes>
     <resources>
         <image name="back_button" width="11" height="17"/>
-        <image name="ic_check_box" width="24" height="24"/>
+        <image name="ic_check_box" width="20" height="20"/>
         <image name="ic_create_team" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Xeg-kd-PD5"/>
+        <segue reference="0CQ-h7-izv"/>
         <segue reference="bcD-cB-P4q"/>
         <segue reference="2Z2-5o-v84"/>
-        <segue reference="Xeg-kd-PD5"/>
-        <segue reference="Evk-4w-cMk"/>
     </inferredMetricsTieBreakers>
 </document>

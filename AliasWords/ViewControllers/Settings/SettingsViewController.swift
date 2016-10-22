@@ -159,7 +159,7 @@ final class SettingsViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = UIColor.white
-        label.backgroundColor = UIColor.black
+        label.backgroundColor = UIColor.astral
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5.0
         

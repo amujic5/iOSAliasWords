@@ -123,6 +123,7 @@ extension NewGameToSettingsSegue: UIViewControllerAnimatedTransitioning {
             view.layer.cornerRadius = 5
             view.layer.masksToBounds = true
             view.frame = cell.superview!.convert(cell.frame, to: nil)
+            view.backgroundColor = cell.backgroundColor
             view.alpha = 0
             
             let label = UILabel()
@@ -133,7 +134,7 @@ extension NewGameToSettingsSegue: UIViewControllerAnimatedTransitioning {
             
             UIView.animate(withDuration: 0.1, animations: {
                 view.alpha = 1
-                view.backgroundColor = UIColor.black
+                view.backgroundColor = UIColor.astral
                 label.textColor = UIColor.white
                 cell.alpha = 0
                 }, completion: { (_) in

@@ -200,6 +200,8 @@ extension NewGameViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let addEditTeamView: AddEditTeamView = AddEditTeamView.initViewWithOwner(self)
         addEditTeamView.isHidden = false
         view.addSubview(addEditTeamView)
