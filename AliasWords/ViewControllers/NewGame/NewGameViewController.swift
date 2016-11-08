@@ -113,6 +113,7 @@ extension NewGameViewController: AddEditTeamViewDelegate {
             teams.remove(at: teamIndex)
             let indexSet = IndexSet(integer: teamIndex)
             tableView.deleteSections(indexSet, with: .automatic)
+            updateVSLabel()
         }
     }
     
@@ -165,6 +166,8 @@ extension NewGameViewController: AddEditTeamViewDelegate {
             }) { (_) in
                 addEditTeamView.removeFromSuperview()
         }
+        
+        updateVSLabel()
     }
     
 }

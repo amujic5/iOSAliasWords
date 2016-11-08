@@ -22,6 +22,12 @@ final class EditAnswersTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func configure(markedWord: (word: String, isCorrect: Bool)) {
+        titleLabel.text = markedWord.word
+        titleLabel.textColor = markedWord.isCorrect ? UIColor.black : UIColor.red
+        correctSwitch.isOn = markedWord.isCorrect
+    }
 
     @IBAction func switcherChangedValue(_ sender: UISwitch) {
         delegate?.swticherClicked(on: self)

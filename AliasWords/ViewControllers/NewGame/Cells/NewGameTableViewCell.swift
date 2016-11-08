@@ -32,6 +32,12 @@ final class NewGameTableViewCell: UITableViewCell {
         teamNameLabel.text = team.teamName
         firstPlayerLabel.text = team.firstPlayer
         secondPlayerLabel.text = team.secondPlayer
+        
+        if team.playing {
+            checkboxButton.setImage(selectedCheckboxImage, for: UIControlState())
+        } else {
+            checkboxButton.setImage(unSelectedCheckboxImage, for: UIControlState())
+        }
     }
 
     @IBAction func checkboxButtonClicked(_ sender: UIButton) {
@@ -39,9 +45,9 @@ final class NewGameTableViewCell: UITableViewCell {
         delegate?.checkBoxClickedOnCell(self)
         
         if (checkboxButton.currentImage == selectedCheckboxImage) {
-            checkboxButton .setImage(unSelectedCheckboxImage, for: UIControlState())
+            checkboxButton.setImage(unSelectedCheckboxImage, for: UIControlState())
         } else {
-            checkboxButton .setImage(selectedCheckboxImage, for: UIControlState())
+            checkboxButton.setImage(selectedCheckboxImage, for: UIControlState())
         }
         
     }

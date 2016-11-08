@@ -12,6 +12,7 @@ final class Dictionary {
     var language: String!
     var languageCode: String!
     var words: [String] = []
+    var imageURLString: String?
     
     init(jsonObject: AnyObject) {
         if let jsonObject = jsonObject as? [String: AnyObject] {
@@ -23,6 +24,7 @@ final class Dictionary {
         language = map["language"] as! String!
         languageCode = map["languageCode"] as! String!
         words = map["words"] as! [String]!
+        imageURLString = map["imageURLString"] as? String
     }
 
 }

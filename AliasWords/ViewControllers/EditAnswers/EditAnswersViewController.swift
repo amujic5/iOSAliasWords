@@ -42,6 +42,12 @@ final class EditAnswersViewController: UIViewController {
         skippedAnswersLabel.text = "\(_currentSkipAnswers) skipped"
     }
     
+    fileprivate func _updateRow(at indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? EditAnswersTableViewCell {
+            let markedWord = markedWords[indexPath.row]
+            cell.configure(markedWord: markedWord)
+        }
+    }
     
     // MARK: Action
     
@@ -79,9 +85,7 @@ extension EditAnswersViewController: UITableViewDataSource {
         let cell: EditAnswersTableViewCell = tableView.dequeueCellAtIndexPath(indexPath)
         
         let markedWord = markedWords[indexPath.row]
-        cell.titleLabel.text = markedWord.word
-        cell.titleLabel.textColor = markedWord.isCorrect ? UIColor.black : UIColor.red
-        cell.correctSwitch.isOn = markedWord.isCorrect
+        cell.configure(markedWord: markedWord)
         cell.delegate = self
         
         return cell
@@ -95,7 +99,6 @@ extension EditAnswersViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
-        
     }
     
 }
@@ -113,7 +116,7 @@ extension EditAnswersViewController: EditAnswersTableViewCellDelegate {
             
             markedWords[index] = markedWord
             
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            _updateRow(at: indexPath)
             _updateViews()
         }
     }

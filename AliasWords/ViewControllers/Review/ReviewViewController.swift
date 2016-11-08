@@ -15,6 +15,13 @@ final class ReviewViewController: UIViewController {
     @IBOutlet weak var currentTeamSkipLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    // next team dialog
+    @IBOutlet weak var dialogView: UIView!
+    @IBOutlet weak var nextTeamNameLabel: UILabel!
+    @IBOutlet weak var nextExplaningPlayerLabel: UILabel!
+    @IBOutlet weak var nextAnsweringPlayerLabel: UILabel!
+    
+    
     var markedWords:[(word: String, isCorrect: Bool)] {
         return game.currentTeamMarkedWords
     }
@@ -37,6 +44,16 @@ final class ReviewViewController: UIViewController {
         currentTeamLabel.text = game.currentTeam.teamName
         currentTeamSkipLabel.text = "\(game.currentSkipAnswers) skipped"
         currentTeamCorrectLabel.text = "\(game.currentCorrectAnswers) correct"
+        
+        if let nextTeam = game.nextTeam {
+            nextTeamNameLabel.text = nextTeam.teamName
+            nextExplaningPlayerLabel.text = game.nextExplainingPlayerName
+            nextAnsweringPlayerLabel.text = game.nextAnsweringPlayerName
+            dialogView.alpha = 1
+        } else {
+            dialogView.alpha = 0
+        }
+        
     }
 
     // MARK : Action

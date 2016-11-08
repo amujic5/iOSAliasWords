@@ -55,6 +55,21 @@ final class Game {
         return _teams[_currentTeamIndex]
     }
     
+    var nextTeam: Team? {
+        if let _ = winnerTeam {
+            return nil
+        }
+        return _teams[_nextTeamIndex]
+    }
+    
+    var nextExplainingPlayerName: String? {
+        return _reverseExplaingAnsweringDirection != _isLastTeamInRound() ? nextTeam?.secondPlayer : nextTeam?.firstPlayer
+    }
+    
+    var nextAnsweringPlayerName: String? {
+        return _reverseExplaingAnsweringDirection != _isLastTeamInRound() ? nextTeam?.firstPlayer : nextTeam?.secondPlayer
+    }
+    
     var explainingPlayerName: String {
         return _reverseExplaingAnsweringDirection ? currentTeam.secondPlayer : currentTeam.firstPlayer
     }
@@ -156,6 +171,10 @@ final class Game {
     // MARK: Private
     
     private func _increaseCurrentTeamIndex() {
+        _currentTeamIndex = _nextTeamIndex
+    }
+    
+    private var _nextTeamIndex: Int {
         var searchOffset = 0
         
         if !_isLastTeamInRound() {
@@ -166,10 +185,10 @@ final class Game {
             .dropFirst(searchOffset)
             .filter {
                 return !$0.isKnockedOut
-        }
+            }
             .first!
         
-        _currentTeamIndex = _teams.index(of: nextTeam)!
+        return _teams.index(of: nextTeam)!
     }
     
     private func _isLastTeamInRound() -> Bool {
@@ -180,7 +199,6 @@ final class Game {
             .count == 0
             
     }
-    
     
     private func randomValue(_ min: Int, max: Int) -> Int {
         let rand = max - min + 1
