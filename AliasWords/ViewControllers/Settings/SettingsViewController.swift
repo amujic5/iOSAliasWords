@@ -231,7 +231,7 @@ extension SettingsViewController: UICollectionViewDataSource {
         let cell: DictionaryCollectionViewCell = collectionView.dequeueCellAtIndexPath(indexPath)
         
         let dictionary = dictionaries[indexPath.row]
-        cell.titleLabel.text = dictionary.languageCode
+        cell.configure(dictionary: dictionary)
         
         return cell
     }
@@ -244,9 +244,9 @@ extension SettingsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.visibleCells.forEach {
-            $0.backgroundColor = UIColor.gray
+            $0.layer.borderColor = UIColor.white.cgColor
         }
-        collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.black
+        collectionView.cellForItem(at: indexPath)?.layer.borderColor = UIColor.sunglow.cgColor
         
         let dictionary = dictionaries[indexPath.row]
         dictionaryLabel.text = dictionary.language

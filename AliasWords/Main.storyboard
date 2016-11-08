@@ -679,23 +679,19 @@ Team that goes through all words in the least amount of time with most points is
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="35"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-Iw-1dt">
-                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OMF-qR-c8T"/>
                                                                     </subviews>
                                                                 </view>
                                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="3aP-Iw-1dt" firstAttribute="leading" secondItem="JeA-Zg-jn0" secondAttribute="leading" id="Pod-jB-bJl"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="3aP-Iw-1dt" secondAttribute="trailing" id="Wgk-cy-NIl"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="3aP-Iw-1dt" secondAttribute="bottom" id="XVo-XT-FJU"/>
-                                                                    <constraint firstItem="3aP-Iw-1dt" firstAttribute="top" secondItem="JeA-Zg-jn0" secondAttribute="top" id="ySC-vA-Uti"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="OMF-qR-c8T" secondAttribute="trailing" id="Bp1-N3-UoX"/>
+                                                                    <constraint firstItem="OMF-qR-c8T" firstAttribute="leading" secondItem="JeA-Zg-jn0" secondAttribute="leading" id="Bru-6V-60s"/>
+                                                                    <constraint firstItem="OMF-qR-c8T" firstAttribute="top" secondItem="JeA-Zg-jn0" secondAttribute="top" id="I4h-j9-ujs"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="OMF-qR-c8T" secondAttribute="bottom" id="dbH-QF-smA"/>
                                                                 </constraints>
                                                                 <size key="customSize" width="60" height="35"/>
                                                                 <connections>
-                                                                    <outlet property="titleLabel" destination="3aP-Iw-1dt" id="HLc-qe-pvA"/>
+                                                                    <outlet property="imageView" destination="OMF-qR-c8T" id="rrX-Cq-JE5"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -1441,10 +1437,10 @@ Team that goes through all words in the least amount of time with most points is
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditAnswersTableViewCell" rowHeight="56" id="jad-f8-GF9" customClass="EditAnswersTableViewCell" customModule="AliasWords" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="1000" height="56"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jad-f8-GF9" id="op7-tb-lZx">
-                                            <frame key="frameInset" width="1000" height="55.5"/>
+                                            <frame key="frameInset" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-rX-XiC">
@@ -1643,9 +1639,9 @@ Team that goes through all words in the least amount of time with most points is
         <image name="ic_create_team" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xeg-kd-PD5"/>
+        <segue reference="2Z2-5o-v84"/>
+        <segue reference="cpA-pF-GqT"/>
         <segue reference="0CQ-h7-izv"/>
         <segue reference="bcD-cB-P4q"/>
-        <segue reference="2Z2-5o-v84"/>
     </inferredMetricsTieBreakers>
 </document>

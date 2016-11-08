@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MGSwipeTableCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21AF6A0645847BF27AA92DFB20A396D9</key>
+		<key>1DE93A359FA21F91DFBE81309E851A4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D80C383E5183FF405CDDA68AC6FB2BE</key>
+		<key>5509530F2405A2DE08E065609799534F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA8698AA3399236522DFAA07512F3EB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
