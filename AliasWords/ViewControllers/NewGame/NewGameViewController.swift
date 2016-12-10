@@ -90,15 +90,19 @@ final class NewGameViewController: UIViewController {
     @IBAction func createNewTeamButtonClicked(_ sender: UIButton) {
         let addEditTeamView: AddEditTeamView = AddEditTeamView.initViewWithOwner(self)
         view.addSubview(addEditTeamView)
+        addEditTeamView.frame = view.bounds
         addEditTeamView.createTeam(createButton: sender)
         addEditTeamView.delegate = self
     }
     
     @IBAction func startGameButtonClicked(_ sender: UIButton) {
-        performSegue(withIdentifier: SettingsViewController.identifier, sender: sender)
         if playingTeams.count > 1 {
+            performSegue(withIdentifier: SettingsViewController.identifier, sender: sender)
         } else {
-            // show alert
+            let alertController = UIAlertController(title: "Warning!", message: "You should create at least 2 teams to start play!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
         }
     }
 

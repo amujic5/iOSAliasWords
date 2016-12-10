@@ -16,7 +16,7 @@ final class DictionaryCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = true
         layer.cornerRadius = 5.0
         layer.borderColor = UIColor.white.cgColor
-        layer.borderWidth = 2
+        layer.borderWidth = 2.5
     }
     
     func configure(dictionary: Dictionary) {

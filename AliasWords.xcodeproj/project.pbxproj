@@ -24,6 +24,7 @@
 		5717671F1DA19DCB00015BCB /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717671E1DA19DCB00015BCB /* PlayViewController.swift */; };
 		571767211DA1AACE00015BCB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571767201DA1AACE00015BCB /* Game.swift */; };
 		571767231DA1B9A900015BCB /* SettingsToPlaySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571767221DA1B9A900015BCB /* SettingsToPlaySegue.swift */; };
+		57185A131DFC6D2F00CB9054 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57185A121DFC6D2F00CB9054 /* String.swift */; };
 		57289B201DA703BE0096BC9F /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B1F1DA703BE0096BC9F /* ReviewViewController.swift */; };
 		57289B221DA708310096BC9F /* PlayToReviewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B211DA708310096BC9F /* PlayToReviewSegue.swift */; };
 		57289B241DA70AAA0096BC9F /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57289B231DA70AAA0096BC9F /* ReviewTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		5717671E1DA19DCB00015BCB /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		571767201DA1AACE00015BCB /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		571767221DA1B9A900015BCB /* SettingsToPlaySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsToPlaySegue.swift; sourceTree = "<group>"; };
+		57185A121DFC6D2F00CB9054 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		57198BB61D8F42DE0024F64A /* SettingsToNewGameSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsToNewGameSegue.swift; sourceTree = "<group>"; };
 		57289B1F1DA703BE0096BC9F /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		57289B211DA708310096BC9F /* PlayToReviewSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayToReviewSegue.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				5702CD051D80C16E007405E6 /* CellMagic.swift */,
 				570148FE1D7A24FD000C1551 /* UIView.swift */,
 				579D6E801DBC256600451DBA /* Color.swift */,
+				57185A121DFC6D2F00CB9054 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KLD9S9KY48;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -411,7 +415,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F934214EB96256E78DC146E2 /* [CP] Copy Pods Resources */ = {
@@ -450,6 +454,7 @@
 				570148E51D7A1F8A000C1551 /* AppDelegate.swift in Sources */,
 				572C87B31DA9730D00B3C08A /* ReviewToPlaySegue.swift in Sources */,
 				5702CD091D80C5A2007405E6 /* AddEditTeamView.swift in Sources */,
+				57185A131DFC6D2F00CB9054 /* String.swift in Sources */,
 				57289B241DA70AAA0096BC9F /* ReviewTableViewCell.swift in Sources */,
 				5702CD021D80C0F3007405E6 /* NewGameViewController.swift in Sources */,
 				57A778D41D8C5CE5005CD4AD /* HomeToNewGameSegue.swift in Sources */,
@@ -504,6 +509,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -549,7 +555,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -575,11 +582,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AliasWords/AliasWords.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KLD9S9KY48;
 				INFOPLIST_FILE = AliasWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AliasWords;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azzi.aliaswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -590,11 +600,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AliasWords/AliasWords.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KLD9S9KY48;
 				INFOPLIST_FILE = AliasWords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AliasWords;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azzi.aliaswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

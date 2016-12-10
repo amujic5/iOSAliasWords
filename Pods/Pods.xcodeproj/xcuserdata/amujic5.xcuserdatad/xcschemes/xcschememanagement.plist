@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UICountingLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1DE93A359FA21F91DFBE81309E851A4A</key>
+		<key>06BD2DD1A45B652E477A530DE59FDA4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E1263BFF45F6446CF3DE29AE234C893</key>
+		<key>1233CA170A11BF5EF64D6495FAD87AAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53D8D1DE5ED295DBF7F9C0D1C3636B35</key>
+		<key>1CD80321715FDB12A3A31B7BCB09EA28</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5509530F2405A2DE08E065609799534F</key>
+		<key>4873B00D61B0EB13473C5D4E15447D0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA8698AA3399236522DFAA07512F3EB6</key>
+		<key>91AFFB49C9895E69CE5F392B17A6CD7D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF8A2338125F66845B21DC2D0C600278</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

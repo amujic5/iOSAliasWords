@@ -44,7 +44,12 @@ final class SettingsViewController: UIViewController {
         let time = Int(timeSlider.value)
         let goalScore = Int(scoreSlider.value)
         
-        return Game(time: time, goalScore: goalScore, teams: teams, dictionary: dictionaries[0])
+        var selectedDictionary = dictionaries[0]
+        if let selectedIndex = collectionView.indexPathsForSelectedItems?.first?.row {
+            selectedDictionary = dictionaries[selectedIndex]
+        }
+        
+        return Game(time: time, goalScore: goalScore, teams: teams, dictionary: selectedDictionary)
     }
     
     override func viewDidLoad() {
@@ -173,7 +178,7 @@ final class SettingsViewController: UIViewController {
             switch dictionaryResponse {
             case .success(let dictionaries):
                 self.dictionaries = dictionaries
-            case .failure(let error):
+            case .failure(_):
                 self.dictionaries = []
             }
         }
@@ -212,6 +217,13 @@ final class SettingsViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func playButtonClicked(_ sender: UIButton) {
+        
+        game.resetGame()
+        performSegue(withIdentifier: "SettingsToPlaySegue", sender: nil)
+    }
+    
 }
 
 // MARK: UICollectionViewDataSource

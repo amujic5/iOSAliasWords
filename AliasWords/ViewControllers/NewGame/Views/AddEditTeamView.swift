@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol AddEditTeamViewDelegate: class {
     func createdNewTeam(_ team: Team, addEditTeamView: AddEditTeamView)
@@ -27,6 +29,7 @@ final class AddEditTeamView: UIView {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteParenViewHeightConstraint: NSLayoutConstraint!
     
+    let disposeBag = DisposeBag()
     weak var editingTeam: Team?
     
     override func awakeFromNib() {
@@ -35,6 +38,36 @@ final class AddEditTeamView: UIView {
         firstPlayerTextField.delegate = self
         secondPLayerTextField.delegate = self
         teamNameTextField.delegate = self
+        _configureValidation()
+    }
+    
+    private func _configureValidation() {
+        
+        let firstPlayerValidation = firstPlayerTextField.rx.text.map { (text) -> Bool in
+            return text?.isNotEmpty ?? false
+            }
+            .shareReplay(1)
+        
+        
+        let secondPlayerValidation = secondPLayerTextField.rx.text.map { (text) -> Bool in
+            return text?.isNotEmpty ?? false
+            }
+            .shareReplay(1)
+        
+        let teamNameValidation = teamNameTextField.rx.text.map { (text) -> Bool in
+            return text?.isNotEmpty ?? false
+            }
+            .shareReplay(1)
+        
+        Observable
+            .combineLatest(firstPlayerValidation, secondPlayerValidation, teamNameValidation) {
+                $0 && $1 && $2
+            }
+            .subscribe(onNext: { (isValid) in
+                self.createButton.isEnabled = isValid
+                self.createButton.alpha = isValid ? 1 :  0.6
+            }, onError: nil, onCompleted: nil, onDisposed: nil)
+            .addDisposableTo(disposeBag)
     }
     
     func createTeam(createButton: UIButton) {

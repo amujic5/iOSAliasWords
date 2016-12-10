@@ -146,9 +146,5 @@ extension SettingsToPlaySegue: UIViewControllerAnimatedTransitioning {
             
             }
         }
-        
-        
-
-        
     }
 }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '53D8D1DE5ED295DBF7F9C0D1C3636B35'
+               BlueprintIdentifier = '91AFFB49C9895E69CE5F392B17A6CD7D'
                BlueprintName = 'AHKNavigationController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AHKNavigationController.framework'>

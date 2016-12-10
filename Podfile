@@ -14,6 +14,8 @@ target 'AliasWords' do
   pod 'Firebase/Auth'
   pod 'Firebase/AdMob'
   pod ‘Kingfisher’
+  pod 'RxCocoa',    '3.0.0-rc.1' 
+  pod 'RxSwift',    '3.0.0-rc.1'
 end
 
 post_install do |installer|

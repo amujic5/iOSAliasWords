@@ -37,6 +37,9 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - Kingfisher (3.2.0)
   - MGSwipeTableCell (1.5.5)
+  - RxCocoa (3.0.0-rc.1):
+    - RxSwift (~> 3.0.0-rc.1)
+  - RxSwift (3.0.0-rc.1)
   - UICountingLabel (1.4.0)
 
 DEPENDENCIES:
@@ -48,6 +51,8 @@ DEPENDENCIES:
   - Firebase/Database
   - Kingfisher
   - MGSwipeTableCell
+  - RxCocoa (= 3.0.0-rc.1)
+  - RxSwift (= 3.0.0-rc.1)
   - UICountingLabel
 
 SPEC CHECKSUMS:
@@ -64,8 +69,10 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Kingfisher: 50407d1d5dbc34965009d425a286342ff36a84ea
   MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  RxCocoa: e72a074a7f38896ec0382d096df5f58df10115c7
+  RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
 
-PODFILE CHECKSUM: 35941f3aff7c5a90db1280a4b9fed8183129ed37
+PODFILE CHECKSUM: 46523e66b12721fa526652013d094b82680f16a8
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.beta.1

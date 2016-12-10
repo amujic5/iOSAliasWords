@@ -115,6 +115,13 @@ final class Game {
         _dictionary = dictionary
     }
     
+    func resetGame() {
+        _currentTeamIndex = 0
+        _teams.forEach {
+            $0.resetTeam()
+        }
+    }
+    
     func currentTeamHasFinishedTheRound() {
         currentTeam.roundsPlayed += 1
         currentTeam.deltaScoreRound = currentRoundScore
@@ -141,14 +148,26 @@ final class Game {
             return $0.score >= _goalScore
         }
         
-        if !shouldKnockOutTeams {
-            return
-        }
-        
         let bestScoreTeam = _teams.max {
             return $0.0.score < $0.1.score
-        }!
+            }!
         let maxCurrentScore = bestScoreTeam.score
+        
+        if !shouldKnockOutTeams {
+            if _isLastTeamInRound() {
+                if maxCurrentScore < _goalScore {
+                    _teams.forEach {
+                        $0.isKnockedOut = false
+                    }
+                } else {
+                    _teams.forEach {
+                        $0.isKnockedOut = $0.score < maxCurrentScore
+                    }
+                }
+            }
+            
+            return
+        }
         
         _teams.forEach {
             $0.isKnockedOut = $0.score < maxCurrentScore

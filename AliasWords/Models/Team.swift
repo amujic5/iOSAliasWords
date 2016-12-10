@@ -36,6 +36,13 @@ final class Team: NSObject {
         deltaScoreRound = 0
     }
     
+    func resetTeam() {
+        isKnockedOut = false
+        roundsPlayed = 0
+        deltaScoreRound = 0
+        _score = 0
+    }
+    
     func updateScore() {
         _score += deltaScoreRound
         deltaScoreRound = 0

@@ -10,6 +10,7 @@ import UIKit
 
 final class ReviewViewController: UIViewController {
 
+    @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var currentTeamLabel: UILabel!
     @IBOutlet weak var currentTeamCorrectLabel: UILabel!
     @IBOutlet weak var currentTeamSkipLabel: UILabel!
@@ -50,19 +51,20 @@ final class ReviewViewController: UIViewController {
             nextExplaningPlayerLabel.text = game.nextExplainingPlayerName
             nextAnsweringPlayerLabel.text = game.nextAnsweringPlayerName
             dialogView.alpha = 1
+            finishButton.alpha = 0
         } else {
+            finishButton.alpha = 1
             dialogView.alpha = 0
         }
         
     }
 
-    // MARK : Action
+    // MARK: Action
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
         
-        if let winnerTeam = game.winnerTeam {
+        if let _ = game.winnerTeam {
             let _ = navigationController?.popViewController(animated: true)
-            print(winnerTeam.teamName)
         } else {
             game.newRound()
             performSegue(withIdentifier: String(describing: ReviewToPlaySegue.self), sender: nil)
