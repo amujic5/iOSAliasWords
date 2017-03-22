@@ -38,36 +38,6 @@ final class AddEditTeamView: UIView {
         firstPlayerTextField.delegate = self
         secondPLayerTextField.delegate = self
         teamNameTextField.delegate = self
-        _configureValidation()
-    }
-    
-    private func _configureValidation() {
-        
-        let firstPlayerValidation = firstPlayerTextField.rx.text.map { (text) -> Bool in
-            return text?.isNotEmpty ?? false
-            }
-            .shareReplay(1)
-        
-        
-        let secondPlayerValidation = secondPLayerTextField.rx.text.map { (text) -> Bool in
-            return text?.isNotEmpty ?? false
-            }
-            .shareReplay(1)
-        
-        let teamNameValidation = teamNameTextField.rx.text.map { (text) -> Bool in
-            return text?.isNotEmpty ?? false
-            }
-            .shareReplay(1)
-        
-        Observable
-            .combineLatest(firstPlayerValidation, secondPlayerValidation, teamNameValidation) {
-                $0 && $1 && $2
-            }
-            .subscribe(onNext: { (isValid) in
-                self.createButton.isEnabled = isValid
-                self.createButton.alpha = isValid ? 1 :  0.6
-            }, onError: nil, onCompleted: nil, onDisposed: nil)
-            .addDisposableTo(disposeBag)
     }
     
     func createTeam(createButton: UIButton) {
@@ -147,9 +117,10 @@ final class AddEditTeamView: UIView {
             }) { (finished) in
                 
                 delay(seconds: 0.15, completion: {
-                    self.teamNameTextField.becomeFirstResponder()
                     UIView.animate(withDuration: 0.4, animations: {
                         self.dialogView.transform = CGAffineTransform.identity
+                    }, completion: { (_) in
+                        self.teamNameTextField.becomeFirstResponder()
                     })
                 })
         }
@@ -232,6 +203,46 @@ final class AddEditTeamView: UIView {
     }
     
     @IBAction func createButtonClicked(_ sender: UIButton) {
+        
+        var validationStringErrorMessage: String = ""
+        
+        if teamNameTextField.text!.isEmpty {
+            validationStringErrorMessage += "\nTeam name is required"
+        }
+        
+        if firstPlayerTextField.text!.isEmpty {
+            validationStringErrorMessage += "\nFirst player name is required"
+        }
+        
+        if secondPLayerTextField.text!.isEmpty {
+            validationStringErrorMessage += "\nSecond player name is required"
+        }
+        
+        if validationStringErrorMessage.isNotEmpty {
+            
+            let alertController = UIAlertController(title: "All fields are required!", message: validationStringErrorMessage, preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                if self.teamNameTextField.text!.isEmpty {
+                   self.teamNameTextField.becomeFirstResponder()
+                }
+                
+                if self.firstPlayerTextField.text!.isEmpty {
+                    self.firstPlayerTextField.becomeFirstResponder()
+                }
+                
+                if self.secondPLayerTextField.text!.isEmpty {
+                    self.secondPLayerTextField.becomeFirstResponder()
+                }
+            })
+            alertController.addAction(okAction)
+            
+            (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
+        
         if let team = editingTeam {
             team.teamName = teamNameTextField.text!
             team.firstPlayer = firstPlayerTextField.text!
