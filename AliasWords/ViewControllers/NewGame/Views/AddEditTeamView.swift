@@ -95,6 +95,7 @@ final class AddEditTeamView: UIView {
                     }, completion: { (_) in
                         createButton.alpha = 1
                         view.removeFromSuperview()
+                        self.teamNameTextField.becomeFirstResponder()
                 })
         }
 
