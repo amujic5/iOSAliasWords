@@ -25,6 +25,13 @@ final class Dictionary {
         languageCode = map["languageCode"] as! String!
         words = map["words"] as! [String]!
         imageURLString = map["imageURLString"] as? String
+        
+        self.removeDuplicates()
+    }
+    
+    func removeDuplicates() {
+        let set = Set(words)
+        words = Array(set)
     }
 
 }

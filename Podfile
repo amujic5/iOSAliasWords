@@ -1,10 +1,10 @@
-# Uncomment this line to define a global platform for your project
+# Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
 target 'AliasWords' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for AliasWords
   pod 'MGSwipeTableCell'
   pod "AHKNavigationController"
   pod 'UICountingLabel'
@@ -16,6 +16,14 @@ target 'AliasWords' do
   pod ‘Kingfisher’
   pod 'RxCocoa',    '3.0.0-rc.1' 
   pod 'RxSwift',    '3.0.0-rc.1'
+  # Pods for AliasWords
+
+  target 'AliasWordsTests' do
+    inherit! :search_paths
+    pod 'Firebase'
+    # Pods for testing
+  end
+
 end
 
 post_install do |installer|
